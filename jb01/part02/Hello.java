@@ -1,3 +1,5 @@
+package jb01.part02;
+
 public class Hello {
     // java 실행에 필요한 method : main method
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package jb01.part04;
+
 /*
     1. Java에서 제공되는 8EA의 Primitive Data type의 이해
     2. Variable declaration(변수선언)과 Variable Assignment(값의 대입)
