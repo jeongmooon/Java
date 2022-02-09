@@ -1,8 +1,8 @@
 package jb01.part04;
 
 /*
-    1. Javaì—ì„œ ì œê³µë˜ëŠ” 8EAì˜ Primitive Data typeì˜ ì´í•´
-    2. Variable declaration(ë³€ìˆ˜ì„ ì–¸)ê³¼ Variable Assignment(ê°’ì˜ ëŒ€ìž…)
+    1. Java¿¡¼­ Á¦°øµÇ´Â 8EAÀÇ Primitive Data typeÀÇ ÀÌÇØ
+    2. Variable declaration(º¯¼ö¼±¾ð)°ú Variable Assignment(°ªÀÇ ´ëÀÔ)
 */
 
 public class PrimitiveTest {
@@ -10,39 +10,39 @@ public class PrimitiveTest {
     //main method
     public static void main(String[] args) {
         
-        // ë…¼ë¦¬í˜•
+        // ³í¸®Çü
         boolean boo = true;
 
-        // ë¬¸ìží˜•
-        char c = 'í™';
+        // ¹®ÀÚÇü
+        char c = 'È«';
 
-        // ì •ìˆ˜í˜•
+        // Á¤¼öÇü
         byte b = 127;
-        // ë²”ìœ„ë¥¼ ë„˜ì–´ì„œëŠ” ìˆ˜ë¥¼ ë‹´ì„ ê²½ìš°ë¬¸ì œ ë°œìƒ
-        // ==> compile error ë°œìƒ(í™•ì¸ìš”ë§)
+        // ¹üÀ§¸¦ ³Ñ¾î¼­´Â ¼ö¸¦ ´ãÀ» °æ¿ì¹®Á¦ ¹ß»ý
+        // ==> compile error ¹ß»ý(È®ÀÎ¿ä¸Á)
         // byte b1 = 128;
 
         short s = 1000;
         int i = 1000;
-        long l = 1000L; // <== long ì˜ ê²½ìš° 000l ë˜ëŠ” 000L ë¡œ intì™€ êµ¬ë³„
+        long l = 1000L; // <== long ÀÇ °æ¿ì 000l ¶Ç´Â 000L ·Î int¿Í ±¸º°
 
-        // ì‹¤ìˆ˜í˜•
+        // ½Ç¼öÇü
         double d = 1000.5;
-        float f = 1000.5F; // <== float ì˜ ê²½ìš° 000f ë˜ëŠ” 000Fë¡œ doubleê³¼ êµ¬ë³„
+        float f = 1000.5F; // <== float ÀÇ °æ¿ì 000f ¶Ç´Â 000F·Î double°ú ±¸º°
         
-        // print()ì™€ println()ì˜ ì°¨ì´ì  <== ì‹¤í–‰ê²°ê³¼ë¥¼ í™•ì¸í•¨
-        System.out.print("ìžë°”ì˜ Primitive Data type ì„++");
-        System.out.println(":: ì‚¬ìš©í•˜ì—¬ í‘œì¤€ ì¶œë ¥ ìž¥ì¹˜ë¡œ..." + ":: ì¶œë ¥");
+        // print()¿Í println()ÀÇ Â÷ÀÌÁ¡ <== ½ÇÇà°á°ú¸¦ È®ÀÎÇÔ
+        System.out.print("ÀÚ¹ÙÀÇ Primitive Data type À»++");
+        System.out.println(":: »ç¿ëÇÏ¿© Ç¥ÁØ Ãâ·Â ÀåÄ¡·Î..." + ":: Ãâ·Â");
 
-        // +ì—°ì‚°ìžì˜ ì˜ë¯¸(ë¬¸ìžì™€ + ì—°ì‚°ìžê°€ ì‚¬ìš©ë˜ë©´ append)
-        System.out.println("ë…¼ë¦¬í˜•"+boo);
-        System.out.println("ë¬¸ìží˜•"+c);
-        System.out.println("ì •ìˆ˜í˜• byte"+b);
-        System.out.println("ì •ìˆ˜í˜• short"+s);
-        System.out.println("ì •ìˆ˜í˜• int"+i);
-        System.out.println("ì •ìˆ˜í˜• long"+l);
-        System.out.println("ì‹¤ìˆ˜í˜• float"+f);
-        System.out.println("ì‹¤ìˆ˜í˜• double"+d);
+        // +¿¬»êÀÚÀÇ ÀÇ¹Ì(¹®ÀÚ¿Í + ¿¬»êÀÚ°¡ »ç¿ëµÇ¸é append)
+        System.out.println("³í¸®Çü"+boo);
+        System.out.println("¹®ÀÚÇü"+c);
+        System.out.println("Á¤¼öÇü byte"+b);
+        System.out.println("Á¤¼öÇü short"+s);
+        System.out.println("Á¤¼öÇü int"+i);
+        System.out.println("Á¤¼öÇü long"+l);
+        System.out.println("½Ç¼öÇü float"+f);
+        System.out.println("½Ç¼öÇü double"+d);
     }// end of main
     
 }// end of class

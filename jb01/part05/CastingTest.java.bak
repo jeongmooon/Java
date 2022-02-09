@@ -36,16 +36,16 @@ public class CastingTest {
 
         // 실수를 정수형에 대입하면 결과는 ==> ??
         int i3 = 201/2;
-        System.out.println("i3(201/2) :"+i3); 100
+        System.out.println("i3(201/2) :"+i3); 
 
         // 정수의 계산을 실수형에 대입시 결과는 ==> ??
         double d1 = 201/2;
-        System.out.println("d1(201/2) :" +d1); 100
+        System.out.println("d1(201/2) :" +d1); 
 
         // 정수 int DataType 201을 실수 double DataType으로 명시적 형변환 후
         // 계산 결과를 double DataType으로 받으면 출력 결과는 == ??
         double d2=(double)201/2;
-        System.out.println("d2(201/2) :"+d2); 100.5
+        System.out.println("d2(201/2) :"+d2); 
 
 
     

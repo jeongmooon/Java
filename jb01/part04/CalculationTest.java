@@ -4,14 +4,14 @@ public class CalculationTest {
     //main method
     public static void main(String[] args) {
         int a;      // int data type variable a declaration
-        a = 0;      // int data type variable aì— valueëŒ€ì…
-        int b = 1;  // int data type varable b declaratio ê³¼ ë™ì‹œì— value ëŒ€ì…
+        a = 0;      // int data type variable a¿¡ value´ëÀÔ
+        int b = 1;  // int data type varable b declaratio °ú µ¿½Ã¿¡ value ´ëÀÔ
         int c = 2;
 
-        // ë³€ìˆ˜ì˜ ê°’ì„ ì¶œë ¥(ë¬¸ì + ì—°ì‚°ì ì‚¬ìš© =>appned)
+        // º¯¼öÀÇ °ªÀ» Ãâ·Â(¹®ÀÚ + ¿¬»êÀÚ »ç¿ë =>appned)
         System.out.println("a ="+a+"b ="+b+"c ="+c);
         
-        // ìˆ«ì + ì—°ì‚°ì ì‚¬ìš©(ê³„ì‚°)
+        // ¼ıÀÚ + ¿¬»êÀÚ »ç¿ë(°è»ê)
         int sum = a+b+c;
         System.out.println("sum ="+sum);
         System.out.println("a+b+c ="+(a+b+c));
@@ -20,11 +20,11 @@ public class CalculationTest {
         c= c+10;
         System.out.println("c =(c+10)" + c);
 
-        // ì—°ì‚° í›„ ëŒ€ì…ì—°ì‚°ì ( += )ì‚¬ìš© (c = c+10 ë™ì¼í•œ ì˜ë¯¸)
+        // ¿¬»ê ÈÄ ´ëÀÔ¿¬»êÀÚ ( += )»ç¿ë (c = c+10 µ¿ÀÏÇÑ ÀÇ¹Ì)
         c += 10;
         System.out.println("c+=10 ="+c);
 
-        // ë…¼ë¦¬ë°˜ì „ì—°ì‚°ì
+        // ³í¸®¹İÀü¿¬»êÀÚ
         boolean boo1 =true;
         boolean boo2 = !boo1;
 

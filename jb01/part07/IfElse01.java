@@ -1,42 +1,42 @@
 package jb01.part07;
 
 /*
-    1. ë¹„êµì—°ì‚°ì ì—°ìŠµ
-    2. ë¶„ê¸°ë¬¸ if - else ì—°ìŠµ
+    1. ºñ±³¿¬»êÀÚ ¿¬½À
+    2. ºĞ±â¹® if - else ¿¬½À
 */
 
 public class IfElse01 {
     // main method
     public static void main(String[] args) {
-        // ë…¼ë¦¬í˜• ë³€ìˆ˜ì˜ ì„ ì–¸ê³¼ ê°’ì˜ ëŒ€ì…
+        // ³í¸®Çü º¯¼öÀÇ ¼±¾ğ°ú °ªÀÇ ´ëÀÔ
         boolean b1 = true;
         boolean b2;
 
-        // !ë°˜ì „ì—°ì‚°ì ì‚¬ìš©
+        // !¹İÀü¿¬»êÀÚ »ç¿ë
         b2 = !b1;
         int x = 1;
         int y = 2;
 
-        // if-else ê°€ ê°™ì´ ì“°ì´ëŠ” ê²½ìš°
-        // if(ì¡°ê±´ë¬¸) : ì¡°ê±´ë¬¸ì€ ë°˜ë“œì‹œ boolean data typeì¼ ê²ƒ
+        // if-else °¡ °°ÀÌ ¾²ÀÌ´Â °æ¿ì
+        // if(Á¶°Ç¹®) : Á¶°Ç¹®Àº ¹İµå½Ã boolean data typeÀÏ °Í
         if(x<y){
-        //if(0){ // => ì£¼ì„ í’€ê³  ì»´íŒŒì¼ ì—ëŸ¬ í™•ì¸ í•  ê²ƒ
-            System.out.println("x ="+x+", y="+y+"yê°€ í¬ë„¤ìš”");    
+        //if(0){ // => ÁÖ¼® Ç®°í ÄÄÆÄÀÏ ¿¡·¯ È®ÀÎ ÇÒ °Í
+            System.out.println("x ="+x+", y="+y+"y°¡ Å©³×¿ä");    
         } else {
-            System.out.println("x ="+x+", y="+y+"xê°€ í¬ë„¤ìš”");
+            System.out.println("x ="+x+", y="+y+"x°¡ Å©³×¿ä");
         }
 
-        // if ë¬¸ ë‹¨ë…ìœ¼ë¡œ ì“°ì´ëŠ” ê²½ìš°
+        // if ¹® ´Üµ¶À¸·Î ¾²ÀÌ´Â °æ¿ì
         if( x==y ){
-        //if( x=y ){ //==>ì£¼ì„ í’€ê³  ì»´íŒŒì¼ ì—ëŸ¬ë¥¼ í™•ì¸í•  ê²ƒ(ì—ëŸ¬ë°œìƒ ì´ìœ ëŠ” ë“±í˜¸í‘œì‹œ ì˜¤ë¥˜)
-            System.out.println("x ="+x+", y="+y+"x,yê°€ ê°™ë„¤ìš”");
+        //if( x=y ){ //==>ÁÖ¼® Ç®°í ÄÄÆÄÀÏ ¿¡·¯¸¦ È®ÀÎÇÒ °Í(¿¡·¯¹ß»ı ÀÌÀ¯´Â µîÈ£Ç¥½Ã ¿À·ù)
+            System.out.println("x ="+x+", y="+y+"x,y°¡ °°³×¿ä");
         }
 
-        // if-else ifê°€ ì“°ì´ëŠ” ê²½ìš°
+        // if-else if°¡ ¾²ÀÌ´Â °æ¿ì
         if(b2){
-            System.out.println("ifì˜ ì¡°ê±´ë¬¸ì´ b2=falseì…ë‹ˆë‹¤");
+            System.out.println("ifÀÇ Á¶°Ç¹®ÀÌ b2=falseÀÔ´Ï´Ù");
         } else if(b1){
-            System.out.println("ifì˜ ì¡°ê±´ë¬¸ì´ b1=trueì…ë‹ˆë‹¤");
+            System.out.println("ifÀÇ Á¶°Ç¹®ÀÌ b1=trueÀÔ´Ï´Ù");
         }
     
     }// end of main

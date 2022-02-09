@@ -2,30 +2,30 @@ package jb01.part03;
 
 public class Hi {
     public static void main(String[] args) {
-        System.out.println("1ë²ˆì§¸ ì •ë³´ :" + args[0]);
-        System.out.println("2ë²ˆì§¸ ì •ë³´ :" + args[1]);
-        System.out.println("3ë²ˆì§¸ ì •ë³´ :" + args[2]);
+        System.out.println("1¹øÂ° Á¤º¸ :" + args[0]);
+        System.out.println("2¹øÂ° Á¤º¸ :" + args[1]);
+        System.out.println("3¹øÂ° Á¤º¸ :" + args[2]);
     }//end of main
 }// end of class
 
 /*
-    1. compile ë°©ë²•(Console ì—ì„œ...)
+    1. compile ¹æ¹ý(Console ¿¡¼­...)
         c:\work>javac Hi.java
 
-        ==> bytecode ìƒì„± Hi class : í™•ì¸í•  ê²ƒ
+        ==> bytecode »ý¼º Hi class : È®ÀÎÇÒ °Í
 
-    2. ì‹¤í–‰ ë°©ë²•
-        java Hi í™ê¸¸ë™ 1234 í•œì–‘ 5678
+    2. ½ÇÇà ¹æ¹ý
+        java Hi È«±æµ¿ 1234 ÇÑ¾ç 5678
 
-    ==> Hi.classë¥¼ ì‹¤í–‰ì‹œ java Hi í›„ë‹¨ì— ì¶”ê°€ì ì¸ ì •ë³´ë¥¼ ìž…ë ¥í•˜ë©´
-    ==> main.method ë‚´ë¶€ì—ì„œ
-    ==> 1ë²ˆì§¸ ì¶”ê°€ì •ë³´ëŠ” : args[0]
-    ==> 2ë²ˆì§¸ ì¶”ê°€ì •ë³´ëŠ” : args[1]
-    ==> 3ë²ˆì§¸ ì¶”ê°€ì •ë³´ëŠ” : args[2]
-    ==> ë¡œ ë°›ì•„ ì²˜ë¦¬ í•  ìˆ˜ ìžˆë‹¤.
+    ==> Hi.class¸¦ ½ÇÇà½Ã java Hi ÈÄ´Ü¿¡ Ãß°¡ÀûÀÎ Á¤º¸¸¦ ÀÔ·ÂÇÏ¸é
+    ==> main.method ³»ºÎ¿¡¼­
+    ==> 1¹øÂ° Ãß°¡Á¤º¸´Â : args[0]
+    ==> 2¹øÂ° Ãß°¡Á¤º¸´Â : args[1]
+    ==> 3¹øÂ° Ãß°¡Á¤º¸´Â : args[2]
+    ==> ·Î ¹Þ¾Æ Ã³¸® ÇÒ ¼ö ÀÖ´Ù.
 
-    3. +(ì—°ì‚°ìž) : ìš´ìžì— +ë¥¼ ì‚¬ìš©í•˜ë©´ append ëœë‹¤.
+    3. +(¿¬»êÀÚ) : ¿îÀÚ¿¡ +¸¦ »ç¿ëÇÏ¸é append µÈ´Ù.
 
-    4. editplusì—ì„œ ì¸ìžê°’ ë°›ê¸° ì„¤ì •
-        ë¬¸ì„œ/ì˜êµ¬ì ì„¤ì •/ì‚¬ìš©ìžë„êµ¬/ì¸ìˆ˜ë‚´ìš©ë¬»ê¸° check
+    4. editplus¿¡¼­ ÀÎÀÚ°ª ¹Þ±â ¼³Á¤
+        ¹®¼­/¿µ±¸Àû¼³Á¤/»ç¿ëÀÚµµ±¸/ÀÎ¼ö³»¿ë¹¯±â check
 */

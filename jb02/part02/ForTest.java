@@ -1,9 +1,9 @@
 package jb02.part02;
 
 /*
-    1. for(ì´ˆê¸°í™”:ì¡°ê±´; ë³€í™”ê°’)ë¬¸ì„ ì´ìš©
-    2. while(ì¡°ê±´)ë¬¸ê³¼ do-while(ì¡°ê±´)ë¬¸ê³¼ì˜
-    ì°¨ì´ì  ë° í™œìš©í™•ì¸
+    1. for(ÃÊ±âÈ­:Á¶°Ç; º¯È­°ª)¹®À» ÀÌ¿ë
+    2. while(Á¶°Ç)¹®°ú do-while(Á¶°Ç)¹®°úÀÇ
+    Â÷ÀÌÁ¡ ¹× È°¿ëÈ®ÀÎ
 */
 
 public class ForTest {
@@ -12,29 +12,29 @@ public class ForTest {
     public static void main(String[] args) {
         
         int j = 5;
-        System.out.println(j+"ë‹¨ì„ ì¶œë ¥í•©ë‹ˆë‹¤.");
+        System.out.println(j+"´ÜÀ» Ãâ·ÂÇÕ´Ï´Ù.");
 
-        //for ë¬¸ì€ while ë¬¸ê³¼ ë‹¬ë¦¬ ì´ˆê¸°í™”ë¥¼ forë¬¸ ë‚´ë¶€ì—ì„œ í•œë‹¤.
+        //for ¹®Àº while ¹®°ú ´Ş¸® ÃÊ±âÈ­¸¦ for¹® ³»ºÎ¿¡¼­ ÇÑ´Ù.
         for(int i=1; i<10; i++){
             System.out.println(j+"*"+i+"="+j*i);
         }
         
-        //==> ë°˜ë³µë¬¸ for / while ì‚¬ìš©ê³¼ ì°¨ì´ì  ì´í•´
+        //==> ¹İº¹¹® for / while »ç¿ë°ú Â÷ÀÌÁ¡ ÀÌÇØ
         // int k=1;
         // while(k<10){
         //     System.out.println("5*"+k+"="+5*k);
         //     k++;
         // }
 
-        // System.out.println("iì˜ ìµœì •ë³€ê²½ ê°’ :"+i);
-        // System.out.println("kì˜ ìµœì¢…ë³€ê²½ ê°’ :"+k);
+        // System.out.println("iÀÇ ÃÖÁ¤º¯°æ °ª :"+i);
+        // System.out.println("kÀÇ ÃÖÁ¾º¯°æ °ª :"+k);
     
-        //==> ë¬´í•œë£¨í”„ì™€ ë¬´í•œë£¨í”„í›„ë‹¨ì˜ ì‹¤í–‰ë¬¸ì—ì„œ compile errorë¥¼ ì´í•´í•˜ë©´ ...
+        //==> ¹«ÇÑ·çÇÁ¿Í ¹«ÇÑ·çÇÁÈÄ´ÜÀÇ ½ÇÇà¹®¿¡¼­ compile error¸¦ ÀÌÇØÇÏ¸é ...
         for( ; ; ){
-            System.out.println("ì—¬ê¸°ëŠ” ë°˜ë³µë¬¸ ë‚´ë¶€ì˜ ë¬´í•œ ë£¨í”„");
+            System.out.println("¿©±â´Â ¹İº¹¹® ³»ºÎÀÇ ¹«ÇÑ ·çÇÁ");
         }
-        //==> ì•„ë˜ì˜ ì£¼ì„ì„ í’€ë©´ compile errorê°€ ë°œìƒí•œë‹¤ ì´ìœ ëŠ”...
-        //System.out.println("errorê°€ ë°œìƒí•œë‹¤. ì´ìœ ëŠ” ...");
+        //==> ¾Æ·¡ÀÇ ÁÖ¼®À» Ç®¸é compile error°¡ ¹ß»ıÇÑ´Ù ÀÌÀ¯´Â...
+        //System.out.println("error°¡ ¹ß»ıÇÑ´Ù. ÀÌÀ¯´Â ...");
     
     }//end of main
 

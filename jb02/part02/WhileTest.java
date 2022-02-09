@@ -1,10 +1,10 @@
 package jb02.part02;
 /*
-    1. while(ì¡°ê±´)
-    2. do-while(ì¡°ê±´)
-    - í™œìš© ë° ì°¨ì´ì 
-    - whileì€ ì¡°ê±´ì´ ë§ëŠ”ë‹¤ë©´ ì‹¤í–‰
-    - do-whileì€ í•œë²ˆ ì‹¤í–‰ì´ í›„ ì¡°ê±´ì´ ë§ëŠ”ë‹¤ë©´ ì¬ì‹¤í–‰
+    1. while(Á¶°Ç)
+    2. do-while(Á¶°Ç)
+    - È°¿ë ¹× Â÷ÀÌÁ¡
+    - whileÀº Á¶°ÇÀÌ ¸Â´Â´Ù¸é ½ÇÇà
+    - do-whileÀº ÇÑ¹ø ½ÇÇàÀÌ ÈÄ Á¶°ÇÀÌ ¸Â´Â´Ù¸é Àç½ÇÇà
 */
 
 public class WhileTest {
@@ -12,37 +12,37 @@ public class WhileTest {
     //main method
     public static void main(String[] args) {
         
-        // whileë¬¸
-        int i =0;   // #1. ìˆœí™˜ë¬¸ì˜ ì¡°ê±´ì„ ì£¼ê¸°ìœ„í•œ int i ì´ˆê¸°í™”
-        while(i<10){// #2. ì¡°ê±´(boolean data type)
-        //while(0){ // #==> compile error(errorë¥¼ í™•ì¸í•˜ë©´ ì¡°ê±´ë¬¸ì´ boolean typeì´ ì•„ë‹ˆì—¬ì„œ)
-            System.out.println("ì—¬ê¸°ëŠ” whileë¬¸ ë‚´ë¶€ì•ˆì„ i="+i);
-            i++;    // #3. ì¦ê°•ì‹(iì˜ ê°’ì„ ì¦ê°€ì‹œì¼œ ì¢…ë£Œì‹œí‚¤ê¸° ìœ„í•˜ì—¬)
+        // while¹®
+        int i =0;   // #1. ¼øÈ¯¹®ÀÇ Á¶°ÇÀ» ÁÖ±âÀ§ÇÑ int i ÃÊ±âÈ­
+        while(i<10){// #2. Á¶°Ç(boolean data type)
+        //while(0){ // #==> compile error(error¸¦ È®ÀÎÇÏ¸é Á¶°Ç¹®ÀÌ boolean typeÀÌ ¾Æ´Ï¿©¼­)
+            System.out.println("¿©±â´Â while¹® ³»ºÎ¾ÈÀÓ i="+i);
+            i++;    // #3. Áõ°­½Ä(iÀÇ °ªÀ» Áõ°¡½ÃÄÑ Á¾·á½ÃÅ°±â À§ÇÏ¿©)
         }
 
-        //do-while ë¬¸
-        int j =0;   // #1. ìˆœí™˜ë¬¸ì˜ ì¡°ê±´ì„ ì£¼ê¸°ìœ„í•œ int j ì´ˆê¸°í™”
+        //do-while ¹®
+        int j =0;   // #1. ¼øÈ¯¹®ÀÇ Á¶°ÇÀ» ÁÖ±âÀ§ÇÑ int j ÃÊ±âÈ­
         do{
-            System.out.println("\n\tì—¬ê¸°ëŠ” doë¬¸ ë‚´ë¶€ì„ j="+j);
-            j++;    // #2. ì¦ê°•ì‹(jì˜ ê°’ì„ ì¦ê°€ì‹œì¼œ ì¢…ë£Œì‹œí‚¤ê¸° ìœ„í•˜ì—¬)
-        }while(j<1);// #3. ì¡°ê±´(boolean data type)
+            System.out.println("\n\t¿©±â´Â do¹® ³»ºÎÀÓ j="+j);
+            j++;    // #2. Áõ°­½Ä(jÀÇ °ªÀ» Áõ°¡½ÃÄÑ Á¾·á½ÃÅ°±â À§ÇÏ¿©)
+        }while(j<1);// #3. Á¶°Ç(boolean data type)
 
         System.out.println("\n============================================\n");
 
-        //while ë¬¸ì„ ì´ìš©í•˜ì—¬ 5ë‹¨ì„ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨
+        //while ¹®À» ÀÌ¿ëÇÏ¿© 5´ÜÀ» Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥
         int k =1;
         while(k<10){
             System.out.println("5*"+k+"="+5*k);
             k++;
         }
 
-        //==> ë¬´í•œë£¨í”„ì™€ ë¬´í•œë£¨í”„í›„ë‹¨ì˜ ì‹¤í–‰ë¬¸ì—ì„œ compile error ì´í•´...
+        //==> ¹«ÇÑ·çÇÁ¿Í ¹«ÇÑ·çÇÁÈÄ´ÜÀÇ ½ÇÇà¹®¿¡¼­ compile error ÀÌÇØ...
         while(true){
-            System.out.println("ì—¬ê¸°ëŠ” ë°˜ë³µë¬¸ì˜ ë¬´í•œ ë£¨í”„");
+            System.out.println("¿©±â´Â ¹İº¹¹®ÀÇ ¹«ÇÑ ·çÇÁ");
         }
 
-        //==> ì•„ë˜ì˜ ì£¼ì„ì„ í’€ë©´ compile errorê°€ ë°œìƒí•œë‹¤ ì´ìœ ëŠ”...
-        //System.out.println("errorê°€ ë°œìƒí•œë‹¤ ì´ìœ ëŠ” ...");
+        //==> ¾Æ·¡ÀÇ ÁÖ¼®À» Ç®¸é compile error°¡ ¹ß»ıÇÑ´Ù ÀÌÀ¯´Â...
+        //System.out.println("error°¡ ¹ß»ıÇÑ´Ù ÀÌÀ¯´Â ...");
     
     }// end of main
 
