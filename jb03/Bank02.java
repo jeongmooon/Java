@@ -1,4 +1,4 @@
-public class Bank01{
+public class Bank02{
 
 	//Field
 	int balance;
@@ -8,21 +8,21 @@ public class Bank01{
 	String userName;
 
 	//Constructor
-	public Bank01(){
+	public Bank02(){
 	}
 
-	public Bank01(String s1, String s2){
+	public Bank02(String s1, String s2){
 		bankName = s1;
 		userName = s2;
 	}
 
-	public Bank01(String s1, String s2, String s3){
+	public Bank02(String s1, String s2, String s3){
 		bankName = s1;
 		userName = s2;
 		command = Integer.parseInt(s3);
 	}
 
-	public Bank01(String s1, String s2, String s3, String s4){
+	public Bank02(String s1, String s2, String s3, String s4){
 		bankName = s1;
 		userName = s2;
 		command = Integer.parseInt(s3);
@@ -41,10 +41,10 @@ public class Bank01{
 				System.out.println(money+"원 출금함");
 				break;
 			default :
-				System.out.println("명령어를 잘못 입력함");
 				break;
 		}
 	}
+
 	//==> 현재 금액은 display하는 method
 	public void displayMoney(){
 		System.out.println("현재 잔고는 : "+balance+"입니다");
@@ -61,14 +61,17 @@ public class Bank01{
 			System.exit(0);
 		}
 		System.out.println(args[0]+"님의 주거래은행은"+args[1]+"입니다");
-		Bank01 b =new Bank01();
+		Bank02 b =new Bank02();
 
 		switch(args.length){
 			case 2:
-				b = new Bank01(args[0],args[1]);
+				b = new Bank02(args[0],args[1]);
 				break;
+			/*case 3:
+				System.out.println("인자를 잘못입력함");
+				break;*/
 			case 4:
-				b = new Bank01(args[0],args[1],args[2],args[3]);
+				b = new Bank02(args[0],args[1],args[2],args[3]);
 				b.deposit();
 				break;
 			default:

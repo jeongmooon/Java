@@ -31,18 +31,9 @@ public class Bank01{
 
 	//method
 	public void deposit(){
-		switch(command){
-			case 1:
-				balance += money;
-				System.out.println(money+"원 입금함");
-				break;
-			case 2:
-				balance -= money;
-				System.out.println(money+"원 출금함");
-				break;
-			default :
-				System.out.println("명령어를 잘못 입력함");
-				break;
+		if(command == 1){
+			balance += money;
+			System.out.println(money+"원 입금함");
 		}
 	}
 	//==> 현재 금액은 display하는 method
