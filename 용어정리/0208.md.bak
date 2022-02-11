@@ -18,7 +18,7 @@ JDK = JRE와 Tool이 합쳐져 있는 것
     - JRE = class를 실행하는 것\
         - Java Runtime Environment
         - Java를 실행하는사람이 필요한 것
-    - .java를 compile해서 class로 만들어 JDK로 실행하는 것
+    - .java를 compile해서 class로 만들어 JDE로 실행하는 것
 
 Javac.exe
 
