@@ -307,50 +307,6 @@ public class  Prob01 {
 #### 코드
 
 ```
-import java.util.Scanner;
-
-public class Prob02 {
-
-	//Main
-	public static void main(String[] args) {
-		//int num = Integer.parseInt(args[0]);
-		Scanner keyboard = new Scanner(System.in);
-		System.out.print("0보다 큰 홀수를 입력해 주세요>>");
-		int num = keyboard.nextInt();
-
-		if(num%2 == 1 && 0 < num){
-			for(int i=1; i<=num; i++){
-				String s = "";
-				for(int j=1; j<i; j++){
-					s += " ";
-				}
-				for(int j = 1; j <= num-2*i+2; j++){
-					s += "*";
-				}
-				System.out.println(s);
-				if( i > num/2){
-					System.out.println();
-					return;
-				}
-			}			
-		} else {
-			System.out.println("0보다 큰 홀수만 입력 가능합니다.");
-		}
-	}//main
-}//class
-```
-
-
-### Prob02
-역피라미드 별찍기
-
-#### 결과값
-
-<img src="https://user-images.githubusercontent.com/92348108/154237693-ab4a2efb-5b5e-420d-a90d-710e0fe52493.png" />
-
-#### 코드
-
-```
 public class SortUtil {
 	public int[] ascending(int[] inputNumbers){
 		int[] array = inputNumbers;
@@ -398,5 +354,52 @@ public class SortUtil {
 		System.out.println("Successfull!!!");		
 	}//main
 }//class
+```
 
+
+### Prob02
+역피라미드 별찍기
+
+#### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/154237693-ab4a2efb-5b5e-420d-a90d-710e0fe52493.png" />
+
+#### 코드
+
+```
+import java.util.Scanner;
+
+public class Prob02 {
+
+	//Main
+	public static void main(String[] args) {
+		//int num = Integer.parseInt(args[0]);
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("0보다 큰 홀수를 입력해 주세요>>");
+		int num = keyboard.nextInt();
+
+		if(num%2 == 1 && 0 < num){
+			for(int i=1; i<=num; i++){
+				// String 생성
+				String s = "";
+				for(int j=1; j<i; j++){
+					// 왼쪽 빈칸 찍기
+					s += " ";
+				}
+				for(int j = 1; j <= num-2*i+2; j++){
+					// 별찍기
+					s += "*";
+				}
+				System.out.println(s);
+				if( i > num/2){
+					// 별찍기가 끝나고 나머지줄 없애기
+					System.out.println();
+					return;
+				}
+			}			
+		} else {
+			System.out.println("0보다 큰 홀수만 입력 가능합니다.");
+		}
+	}//main
+}//class
 ```
