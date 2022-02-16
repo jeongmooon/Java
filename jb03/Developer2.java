@@ -16,8 +16,8 @@ public class Developer2
 	*1. income 을 1증가
 	*2. projectCareer를 1증가
 	*/
-	public participateProject(String project){
-		Systme.out.println(project+"==> project 참여로 수입증가, 경력쌓음");
+	public void participateProject(String project){
+		System.out.println(project+"==> project 참여로 수입증가, 경력쌓음");
 		avglncome++;
 		projectCareer++;
 	}
@@ -44,11 +44,34 @@ public class Developer2
 	}
 	public int getAvlncome(){
 		System.out.println("getAvlncome() method)");
-		return avlncome;
+		return avglncome;
 	}
 	public int getProjectCareer(){
 		System.out.println("getprojectCareer() method");
 		return projectCareer;
 	}
+
+	public static void main(String[] args) 
+	{
+		Developer2 developer = new Developer2();
+
+		System.out.println("이름 : "+developer.name);
+		System.out.println("직업 : "+developer.job);
+		System.out.println("평균수입은 : "+developer.avglncome);
+		System.out.println("PTJ경력은 : "+developer.projectCareer);
+
+		System.out.println("==================================");
+		
+		// method를 호출하여 행위를 통해 상태값 받아 출력
+		String name = developer.getName();
+		String job = developer.getJob();
+		int avglncome = developer.getAvlncome();
+		int projectCareer = developer.getProjectCareer();
+		System.out.println("이름 : "+name);
+		System.out.println("직업 : "+job);
+		System.out.println("평균수입은 : "+avglncome);
+		System.out.println("PTJ경력은 : "+projectCareer);
+	}// main
+
 
 }//class

@@ -11,10 +11,16 @@ public class Bank03app
 		System.out.println(args[0]+"님의 주거래은행은 "+args[1]+"입니다");
 		Bank03 b =new Bank03();
 		
-		b.setBankName(args[0]);
-		b.setUserName(args[1]);
-		b.setCommand(args[2]);
-		b.setMoney(args[3]);
+		if(args.length == 2) {
+			b.setBankName(args[0]);
+			b.setUserName(args[1]);
+
+		} else if(args.length == 4) {
+			b.setBankName(args[0]);
+			b.setUserName(args[1]);
+			b.setCommand(args[2]);
+			b.setMoney(args[3]);
+		}
 		
 		b.deposit();
 		b.displayMoney();

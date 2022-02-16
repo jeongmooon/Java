@@ -24,7 +24,7 @@ public class User02 {
 	public String getName(){
 		return name;
 	}
-	public int getJavaLevel(){
+	public String getJavaLevel(){
 		return javaLevel;
 	}
 

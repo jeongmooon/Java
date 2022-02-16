@@ -39,7 +39,7 @@ public class User01 {
 			System.out.println("======================================");
 		*/
 
-		System.out.println("name :"+usergetName());
+		System.out.println("name :"+user.getName());
 		System.out.println("javaLevel :"+user.getJavaLevel());
 	}// main
 }// class

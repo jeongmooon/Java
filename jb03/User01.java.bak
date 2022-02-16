@@ -1,5 +1,11 @@
-public class User01
-{	
+/*
+	:: Constructor의미 이해
+	1. 인스턴스 새성시 new A()의 의미의 이해
+	2. new와 같이 사용되는 특수한행위를 하는 method이해
+	3. Constructor 주 작업, 용도는?
+*/
+
+public class User01 {	
 	String name = "홍길동";
 	int javaLevel = 0;
 
