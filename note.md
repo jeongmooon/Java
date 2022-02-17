@@ -413,6 +413,8 @@ API를 사용하는 방법과 용도에 따라 openApi와 restApi가 있다
 	- 같은 패키지 내에서만 접근이 가능함
 
 <table>
+	<th>접근제한 함수</th>
+	<th>기능</th>
 	<tr>
 		<td>public</td>
 		<td>모든 곳에서 접근 가능</td>
