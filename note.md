@@ -412,6 +412,15 @@ API를 사용하는 방법과 용도에 따라 openApi와 restApi가 있다
 	- protected
 	- 같은 패키지 내에서만 접근이 가능함
 
+<table>
+	<tr>public</tr>
+	<tr>private</tr>
+	<tr>protected</tr>
+	<td>모든 곳에서 접근 가능</td>
+	<td>자기 자신 클래스에서만 접근 가능</td>
+	<td>자기 자신 클래스와 상속된 클래스에서 접근 가능</td>
+</table>
+
 ## static
 - 변수나 함수를 메모리에 할당하는 방법은 2가지가 있는데, 첫번째는 static영역에 선언, 다른거는 heap영역에 선언(new연산자)
 - main 메소드는 프로그램의 기본이 되는 함수이여서 Gc에 의해 정리가 안되도록 static으로 선언하여 메모리에 항상 있도록 설정
