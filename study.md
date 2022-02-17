@@ -1,4 +1,15 @@
-# 02-11 study
+# Idex
+
+- [02-11](#02-11 과제)
+- [02-16](#02-16 과제)
+- [02-17](#02-17 과제)
+- [02-18](#02-18 과제)
+
+
+<hr />
+
+
+# 02-11 과제
 
 ### example2
 
@@ -402,4 +413,242 @@ public class Prob02 {
 		}
 	}//main
 }//class
+```
+
+# 02-18 과제
+
+### prob01
+- 정삼각형 특수문자 찍기
+- 특이사항
+	- 키보드로 구현함
+	- 메소드로 만듬
+
+#### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/154442617-5ea12bca-8c08-454a-823b-6d6a5722ce7a.png" />
+
+#### 코드
+
+```
+import java.util.Scanner;
+
+public class Prob01 {
+	
+	// Method
+	public void printStar(String star, int num){
+		for(int i=1; i<=num; i++){
+				// String 생성
+				String s = "";
+
+				for(int j=0;  j<=num-i; j++){
+					// 왼쪽 빈칸 찍기
+					s += " ";
+				}
+
+				for(int j=1; j<=(2*i)-1; j++){
+					// 별찍기
+					s += star;
+				}
+				System.out.println(s);
+			}
+	}
+
+	//Main
+	public static void main(String[] args) {
+		//int num = Integer.parseInt(args[0]);
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.print("원하는 기호를 입력하세요");
+		String star = keyboard.next();
+
+		System.out.print("1보다 큰 숫자를 입력해 주세요>>");
+		int num = keyboard.nextInt();
+
+		if(num<1){
+			System.out.println("1보다 큰 숫자 입력");
+		}
+
+		new Prob01().printStar(star,num);
+
+	}//main
+}//class
+```
+
+
+### prob02
+- 태어난 달을 받아 계절 출력하기
+- 특이사항
+	- 매개변수로 만듬
+	- 메소드의 시그니쳐로 만듬
+	- 반드시 switch문을 사용
+	- 에러값 걸러낼것
+
+#### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/154443026-fc829cfa-408d-4fb5-b8d7-3fe1b3d329fc.png" />
+
+#### 코드
+
+```
+public class Prob02 {
+	//method
+	public void printSeason(int month){
+		String s="";
+		
+		switch(month){
+			case 1 :
+			case 2 :
+			case 3 :
+				s = "봄";
+				break;
+			case 4 :
+			case 5 :
+			case 6 :
+				s = "여름";
+				break;
+			case 7 :
+			case 8 :
+			case 9 :
+				s = "가을";
+				break;
+			case 10 :
+			case 11:
+			case 12 :
+				s = "겨울";
+				break;
+		}
+		System.out.println(s+"에 태어나셨네요.");
+	}
+
+	//main
+	public static void main(String[] args) {
+		int month = Integer.parseInt(args[0]);
+		
+		//필터링
+		if (month<1 || 12<month) {
+			System.out.println("1~12 사이의 숫자를 입력하셔야 합니다.");
+			return;
+		}
+		
+		//호출
+		new Prob02().printSeason(month);
+	}// main
+}//class
+
+```
+
+
+### TestRectabgle
+- 사각형 두개 입력받고 비교하기
+- 특이사항
+	- 키보드 사용
+	- Rectangle 클래스를 신규로 작성하시오
+	- get,set사용
+
+#### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/154443443-b2687a0c-0d96-4705-b689-8f8542d44648.png" />
+
+#### 코드
+
+```
+import java.util.Scanner;
+
+class Rectangle {
+
+	//Field
+	String color;
+	int width;
+	int length;
+	int area;
+	int perimeter;
+	
+	//Constructor
+	public Rectangle(){
+	}
+
+	//setter
+	public void setColor(String str) {
+		color = str;
+	}
+
+	public void setWidth(int a) {
+		width = a;
+	}
+
+	public void setLength(int a) {
+		length = a;
+	}
+
+	//getter
+	public String getColor(){
+		return color;
+	}
+	public int getWidth(){
+		return width;
+	}
+	public int getLength(){
+		return length;
+	}
+	
+	//method
+	public int area() {
+		area = (width*length);
+		return area;
+	}
+
+	public int perimeter() {
+		perimeter = 2*(width+length);
+		return perimeter;
+	}
+
+}//class*/
+
+public class TestRectangle {	
+
+	//main
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+
+		Rectangle rec1 = new Rectangle();
+		System.out.println("첫번째 직사각형의 색깔");
+		rec1.setColor(keyboard.next());
+
+		System.out.println("첫번째 직사각형의 가로");
+		rec1.setWidth(keyboard.nextInt());
+
+		System.out.println("첫번째 직사각형의 세로");
+		rec1.setLength(keyboard.nextInt());
+
+
+		Rectangle rec2 = new Rectangle();
+		System.out.println("두번째 직사각형의 색깔");
+		rec2.setColor(keyboard.next());
+
+		System.out.println("두번째 직사각형의 가로");
+		rec2.setWidth(keyboard.nextInt());
+
+		System.out.println("두번째 직사각형의 세로");
+		rec2.setLength(keyboard.nextInt());
+		
+		// TODO 1) 두 직사각형의 넓이를 비교하시오
+		if(rec1.area() > rec2.area()){
+			System.out.println("넓이는 "+rec1.getColor()+"직사각형이 더 큽니다");
+		} else if(rec1.area() < rec2.area()){
+			System.out.println("넓이는 "+rec2.getColor()+"직사각형이 더 큽니다");
+		} else {
+			System.out.println("넓이는 같습니다");
+		}
+
+		// TODO 2) 두 직사각형의 둘레를 비교하시오
+		if(rec1.perimeter() > rec2.perimeter()){
+			System.out.println("둘레는 "+rec1.getColor()+"직사각형이 더 큽니다");
+		} else if(rec1.perimeter() < rec2.perimeter()){
+			System.out.println("둘레는 "+rec2.getColor()+"직사각형이 더 큽니다");
+		} else {
+			System.out.println("둘레는 같습니다");
+		}
+	}//main
+}// class
+
 ```
