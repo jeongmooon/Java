@@ -617,7 +617,7 @@ public class SuperThisTest {
 
 - 참고 이미지
 
-<img ser="https://user-images.githubusercontent.com/92348108/154665861-bf175e58-895b-497d-8085-8d84967b82e3.png" alt="" />
+<img src="https://user-images.githubusercontent.com/92348108/154665861-bf175e58-895b-497d-8085-8d84967b82e3.png" alt="" />
 
 
 ```
