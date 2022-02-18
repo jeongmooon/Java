@@ -406,12 +406,6 @@ API를 사용하는 방법과 용도에 따라 openApi와 restApi가 있다
 	- 이유로는 main함수는 모든 실행 프로그램의 기본이 되어야함
 	- 때문에 어디에서든 접근이 가능해야함
 
-	- private
-	- 이것은 해당 클래스에서만 접근이 가능함
-
-	- protected
-	- 같은 패키지 내에서만 접근이 가능함
-
 <details>
 	<summary>다른 제한자</summary>
 	<div markdwon="1">
@@ -610,3 +604,87 @@ public class SuperThisTest {
 ## 지역변수(로컬변수)
 - 메소드내에서만 살아있는 변수
 - 선언시점에 값을 지정해야함
+
+
+<hr />
+
+[# statc, stack, heap](#메모리)
+
+## 예제로 알아보기
+
+```
+public class  ObjectTest  {
+	//Field
+	int i;
+	static int j;
+
+	//Static Block
+	static{
+		System.out.println("A> :j = "+j);
+		j=1;
+		System.out.println("B> :j = "+j);
+	}
+
+	//constructor
+	public ObjectTest(){
+		System.out.println("ObjectTest default Constructor :: C>  : i = "+i);
+	}
+	//method(instance method)
+	public void printlnstanceInt(){
+		System.out.println("D> :i = "+i);
+	}
+
+	//static method
+	public static void printClassInt(){
+		System.out.println("E> :j = "+j);
+	}
+	
+	//main method
+	public static void main(String[] args) {
+		System.out.println("|===========================================|");
+		ObjectTest obj1 = new ObjectTest();
+		obj1.printlnstanceInt();
+		obj1.printClassInt();
+		System.out.println("|===========================================|");
+		ObjectTest.printClassInt();
+
+		//==> 위의 출력결과를 이해한다면 아래의 주석풀고 샐행한다면 결과를 예측하면
+		//System.out.println("|===========================================|");
+		ObjectTest obj2 = new ObjectTest();
+		obj2.i = 100;
+		System.out.println("obj2.i = "+obj2.i +": obj1.i = "+obj1.i);
+
+		System.out.println("|===========================================|");
+		obj2.j= 3333;
+		System.out.println("obj2.j = "+obj2.j +": obj1.j = "+obj1.j);
+		System.out.println("ObjectTest.j = "+ObjectTest.j);
+	}//main
+}//class
+
+```
+
+- 이곳에서 int j는 static이 선언되어서 제일 먼저 메모리에서 static에 기록이 되고 다른 메소드변수값에 같이 사용이 된다
+- main 에서 obj1, obj2 인스턴스가 heap에 생성이되고, 주소값이 stack에 기록이 된다
+- obj1.i와 obj2.i는 heap에 각각의 인스턴스에 생성이되어 obj2.i의 값을 바꾸어도 obj1.i의 값은 바뀌지 않는다.
+- obj2.j와 obj2.j는 static에 있는 j값을 사용하고 있어서 ojb2.j의 값을 바꾸면 obj1.j의 값도 같이 바뀌게 된다.
+
+
+<hr / >
+
+
+[# ~is a ~ & ~has a ~](#상속)
+
+<details>
+	<summary>다른 제한자</summary>
+	<div markdwon="1">
+
+	## ~ is a ~
+
+	- 이것은 상속 관계로 extends처럼 확장하여 만들었을때 해당된다
+
+
+	## ~has a ~
+
+	- 이것은 서로 완전 다른 class 이더라도 import나 기본default값을 통하여 호출하여 인스턴스를 생성할 때 말한다.
+
+</details>
