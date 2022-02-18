@@ -614,6 +614,12 @@ public class SuperThisTest {
 
 ## 예제로 알아보기
 
+
+- 참고 이미지
+
+<img ser="https://user-images.githubusercontent.com/92348108/154665861-bf175e58-895b-497d-8085-8d84967b82e3.png" alt="" />
+
+
 ```
 public class  ObjectTest  {
 	//Field
@@ -671,7 +677,7 @@ public class  ObjectTest  {
 - obj2.j와 obj2.j는 static에 있는 j값을 사용하고 있어서 ojb2.j의 값을 바꾸면 obj1.j의 값도 같이 바뀌게 된다.
 
 
-<hr / >
+<hr />
 
 
 # [~is a ~ & ~has a ~](#상속)
@@ -693,3 +699,8 @@ public class  ObjectTest  {
 		</table>
 	</div>
 </details>
+
+
+<hr />
+
+
