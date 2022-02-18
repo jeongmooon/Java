@@ -675,15 +675,15 @@ public class  ObjectTest  {
 [# ~is a ~ & ~has a ~](#상속)
 
 <details>
-	<summary>다른 제한자</summary>
+	<summary>자세히 보기</summary>
 	<div markdwon="1">
 
-	## ~ is a ~
+	<h2>~ is a ~</h2>
 
 	- 이것은 상속 관계로 extends처럼 확장하여 만들었을때 해당된다
 
 
-	## ~has a ~
+	<h2> ~has a ~</h2>
 
 	- 이것은 서로 완전 다른 class 이더라도 import나 기본default값을 통하여 호출하여 인스턴스를 생성할 때 말한다.
 
