@@ -608,7 +608,9 @@ public class SuperThisTest {
 
 <hr />
 
-[# statc, stack, heap](#메모리)
+# [statc, stack, heap](#메모리)
+- java에서는 위에서 아래로 이동하며 메모리에는 static 부터 올라간다.
+- static에 올라간 이후에 main method가 실행이 된다
 
 ## 예제로 알아보기
 
@@ -672,7 +674,7 @@ public class  ObjectTest  {
 <hr / >
 
 
-[# ~is a ~ & ~has a ~](#상속)
+# [~is a ~ & ~has a ~](#상속)
 
 <details>
 	<summary>자세히 보기</summary>
