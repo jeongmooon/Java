@@ -1,9 +1,12 @@
 class Account {
 	//Field
-	String accNo;
-	int balance;
+	private String accNo;
+	private int balance;
 	
 	//Constructor
+	public Account(){
+	}
+
 	public Account(String str){
 		accNo = str;
 		System.out.println(accNo+" 계좌가 개설되었습니다.");
@@ -18,15 +21,15 @@ class Account {
 	}
 
 	//method
-	public void save(int save){
+	public void save(int money){
 		//입금
-		balance += save;
+		balance += money;
 		System.out.println(accNo+" 계좌의 잔고에 "+balance+"만원이 입금되었습니다.");
 	}
 
-	public void deposit(int deposit){
+	public void deposit(int money){
 		//출금
-		balance -= deposit;
+		balance -= money;
 		System.out.println(accNo+" 계좌의 잔고에 "+balance+"만원이 출금되었습니다.");
 	}
 }
