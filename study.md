@@ -4,6 +4,8 @@
 - [02-16](#0216-과제)
 - [02-17](#0217-과제)
 - [02-18](#0218-과제)
+- [02-22](#0222-과제)
+- [02-23](#0223-과제)
 
 
 <hr />
@@ -965,6 +967,397 @@ public class Prob02 {
 		s.print();
 		t.print();
 		e.print();
+	}
+}
+
+```
+
+# 02.22 과제
+
+## ArrayCompare
+- message 전달
+- static method사용
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155076785-59e84740-72b8-48a6-8ec9-c11eff3f95fa.png" />
+
+### 코드
+
+```
+public class ArrayCompare {
+	private static boolean equalsArr(int[] arr1, int[] arr2){
+		if(arr1.length != arr2.length){
+			return false;
+		}
+
+		for(int i=0; i<arr1.length; i++){
+			if(arr1[i] == arr2[i]){
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+
+	public static void main(String[] args) {
+		int[] arr1 = {3,5,6,9,10,2,7};
+		int[] arr2 = {3,5,6,9,10,2,7};
+		if(equalsArr(arr1,arr2)){
+			System.out.println("two array eqauls");
+		} else {
+			System.out.println("two array not equals");
+		}
+
+		System.out.println("==============================================");
+
+		int[] arr3 = {3,5,6,9};
+		int[] arr4 = {3,5,6,9,8};
+		if(equalsArr(arr3,arr4)){
+			System.out.println("two array eqauls");
+		} else {
+			System.out.println("two array not equals");
+		}
+
+		
+	}
+}
+
+```
+
+
+## Prob01
+- Book, BookMgr 클래스 만들기
+- private 접근제한자 사용하기
+- setter/getter사용하기
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155077198-6e0fa01c-d49b-4e31-a730-08687ee152f8.png" />
+
+### 코드
+
+```
+class Book {
+	//Field
+	private String title;
+	private int price;
+
+	//Constructor
+	public Book(){
+	}
+
+	public Book(String title, int price){
+		this.title = title;
+		this.price = price;
+	}
+
+	//setter
+	public void setTitle(String title){
+		this.title = title;
+	}
+	public void setPrice(int price){
+		this.price = price;
+	}
+
+	//getter
+	public String getTitle(){
+		return title;
+	}
+	public int getPrice(){
+		return price;
+	}
+}//class
+
+//
+class BookMgr{
+	//Field
+	Book[] booklist;
+
+	public BookMgr(Book[] booklist){
+		this.booklist = booklist;
+	}
+	
+	public void printBooklist(){
+		for(int i=0; i<booklist.length; i++){
+			System.out.println(booklist[i].getTitle());
+		}
+	}
+
+	public void printTotalPrice(){
+		int total = 0;
+		for(int i=0; i<booklist.length; i++){
+			total += booklist[i].getPrice();
+		}
+		System.out.println("전체 책 가격의 합 : "+total);
+	}
+}
+public class Prob01 {
+	public static void main(String[] args) {
+		Book[] booklist = new Book[5];
+
+		Book book1 = new Book("Java Program", 25000);
+		Book book2 = new Book("JSP Program", 15000);
+		Book book3 = new Book("SQL Fundamentals", 30000);
+		Book book4 = new Book("JDBC Program", 28000);
+		Book book5 = new Book();
+		book5.setTitle("EJB Program");
+		book5.setPrice(34000);
+
+		booklist[0] = book1;
+		booklist[1] = book2;
+		booklist[2] = book3;
+		booklist[3] = book4;
+		booklist[4] = book5;
+		
+		//System.out.println(book1.getPrice());
+
+		BookMgr mgr = new BookMgr(booklist);
+
+		System.out.println("=== 책 목록 ===");
+		mgr.printBooklist();
+		System.out.println("");
+
+		System.out.println("=== 책 가격의 총합 ===");
+		mgr.printTotalPrice();
+	}
+}
+
+```
+
+
+## Prob02
+- 암호만들기
+- API사용하기
+- if, 건너뛰기 사용하기
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155077427-fb5972f1-8bbe-4940-9321-586e4fdd47fd.png" />
+
+### 코드
+
+```
+public class Prob02 {
+	public String encoded(String sourceString){
+		String str = "";
+		for(int i=0; i<sourceString.length(); i++){
+			int a = sourceString.charAt(i)+3;
+			if(a>122){
+				a -= 26;
+				char b = (char)a;
+				str += b;
+			}else if(a == 35){
+				str += " ";
+			}else {
+				char b = (char)a;
+				str += b;
+			}
+		}
+		return str;
+	}
+
+	public String decoded(String encodedeString){
+		String str = "";
+		for(int i=0; i<encodedeString.length(); i++){
+			int a = encodedeString.charAt(i)-3;
+			if(93<a && a<97){
+				a += 26;
+				char b = (char)a;
+				str += b;
+			} else if(a == 29){
+				str += " ";
+			} else {
+				char b = (char)a;
+				str += b;
+			}
+		}
+		return str;
+	}
+
+	public static void main(String[] args) {
+
+		String sourceString = "everyday we have is one more than we deserve";
+		String encodedeString = "";
+		String decodedString = "";
+		
+		Prob02 str = new Prob02();
+		encodedeString = str.encoded(sourceString);
+		System.out.println(encodedeString);
+		
+		decodedString = str.decoded(encodedeString);
+		System.out.println(decodedString);
+		//	sourceString.length();
+		//아스킥타입
+	}
+}
+
+```
+
+
+<hr />
+
+
+
+# 02.23 과제
+
+## Prob01
+- 구구단 만들기
+- Method정의
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155077701-df3c5c0d-6061-4f16-a701-0aaa3e739d0c.png" />
+
+### 코드
+
+```
+public class Prob01 {
+	public static void printGugudan(int no){
+		if(no<0 || 9<no){
+			System.out.println("1 이상 9 이하의 값을 입력하셔야 합니다"); 
+			return;
+		}
+
+		for(int i=0; i<9; i++){
+			for(int j=0; j<no; j++){
+				System.out.print((j+1)+"*"+(i+1)+"="+(j+1)*(i+1)+"\t");
+			}
+			System.out.println();
+		}
+	}
+	public static void main(String[] args) {
+		System.out.println("주어진 숫자까지의 구구단을 찍습니다");
+		System.out.println("=========Sample 1========");
+		printGugudan(4);
+
+		System.out.println("=========Sample 2========");
+		printGugudan(9);
+
+		System.out.println("=========Sample 3========");
+		printGugudan(-1);
+
+		System.out.println("=========Sample 4========");
+		printGugudan(10);
+	}
+}
+
+
+```
+
+
+## TestShape
+- Polymorphism다형성 만들기 오버로딩
+- Object Array만들기
+- abstrac를 만들어서 method 오버라이딩하기
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155077916-708f2d52-4de9-4eb0-b428-002ec8067c4a.png" />
+
+### 코드
+
+```
+abstract class Shape {
+	//Field
+	private String name;
+	protected double area;
+
+	public Shape(){
+	}
+	public Shape(String name){
+		this.name = name;
+	}
+	
+	//setter
+	public void setName(String name){
+		this.name = name;
+	}
+	public void setArea(double area){
+		this.area = area;
+	}
+	//getter
+	public String getName(){
+		return name;
+	}
+	public double getArea(){
+		return area;
+	}
+	
+	public void print(){
+		System.out.println(getName()+"의 면적은"+area);
+	}
+
+	public abstract void calculationArea();
+}
+
+class Circle extends Shape {
+	private double radius;
+
+	public Circle(){}
+	public Circle(String name, double radius){
+		super(name);
+		this.radius = radius;
+	}
+
+	public void setRadius(double radius){
+		this.radius = radius;
+	}
+
+	public double getRadius(){
+		return radius;
+	}
+
+	public void calculationArea(){
+		// Math API호출해서 PI값 가져오기(public이여서 호출가능)
+		super.setArea(radius*radius*Math.PI);
+		
+	}
+}
+
+class Rectangular extends Shape {
+	private double width;
+	private double hight;
+
+	public Rectangular(){}
+	public Rectangular(String name, double width, double hight){
+		super(name);
+		this.width = width;
+		this.hight = hight;
+	}
+
+	//setter
+	public void setWidth(double width){
+		this.width=width;
+	}
+	public void setHight(double higth){
+		this.hight=hight;
+	}
+	//getter
+	public double getWidth(){
+		return width;
+	}
+	public double getHigth(){
+		return hight;
+	}
+	//method
+	public void calculationArea(){
+		super.setArea(width*hight);
+	}
+}
+public class TestShape {
+	public static void main(String[] args) {
+		Shape[] shape = new Shape[2];
+
+		shape[0] = new Circle("원", 10);
+		//System.out.print(shape[0].area);
+		shape[1] = new Rectangular("직사각형", 10,20);
+
+		for(int i=0; i<shape.length; i++){
+			shape[i].calculationArea();
+			shape[i].print();
+		}
 	}
 }
 
