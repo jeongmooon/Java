@@ -790,4 +790,10 @@ b1.equals(b2) ==> F
 - 때문에 Object에 존재하는 equals를 사용할 수 있다.
 - equals를 재정의(오버라이딩)은 추상화(abstract)가 아니여서 반드시 할 필요는 없다. 하지만 비교를 하고싶다면 재정의해도 된다.
 
-<img src="https://user-images.githubusercontent.com/92348108/155113890-7f217106-fc61-4978-95d6-3778f61644dd.jpg" alt="" />
+
+<details>
+	<summary>설명 펼쳐보기</summary>
+	<div markdwon="1">
+		<img src="https://user-images.githubusercontent.com/92348108/155113890-7f217106-fc61-4978-95d6-3778f61644dd.jpg" alt="" />
+	</div>
+</details>
