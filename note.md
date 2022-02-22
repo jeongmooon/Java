@@ -135,8 +135,24 @@ CPU, 그래픽카드, 등등 =객체
 - String은 내부적으로 new 생성자를 통해 메모리 할당, 때문에 Heap에 충분한 여유공간이 있는지 확인하고, 메모리에 String타입 객체를 만들고 **참조 변수(주소)**를 통해 해당객체로 접근
 
 ### Garbage Collection
+- Garbage Collection은 Garbage Collector가 Garbage를 Garbage Collecting하는 과정
 - 불필요한 메모리를 삭제해주는 것
 - System.gc()를 통해 호출은 되지만, 해당 메소드를 호출하는 것은 시스템 성능에 큰 영향을 주어서 절대 호출해서는 안됨
+
+#### 활용 예시
+```
+A a = new A();
+a.a();
+a = null;
+// 사용을 하고나서 null을 주어서 식별성을 끊어서 GC에게 없어지도록 초기화
+
+new A.a();
+// 바로 호출해서 사용하고 식별성은 주지않아서 다른작업 없이 GC에게 초기화
+```
+- null : 식별성을 초기화하는 것?
+- 사용 방식차이
+	- a변수에 식별성을 담는 이유는 만든 인스턴스를 재활용 할 때 사용함
+	- 바로 만들어서 호출 하는 이유는 재활용 하지 않고 바로 사용하고 버릴 경우
 
 #### 동작 방식
 1. Stop The World
@@ -704,3 +720,74 @@ public class  ObjectTest  {
 <hr />
 
 
+
+# 아스키타입
+
+데이터 타입은 크게 정수형, 실수형, 논리형, 문자형이 있다.]
+문자의 아스키코드타입데이터 바코드 버전이다
+
+
+<hr />
+
+
+# abstract class, method && interface
+
+## abstarct class
+- abstract class는 abstract method가 존재한다면 사용해야한다.
+- 또한 이것을 확장하는 자식 개체들은 반드시 abstract 메소드를 오버라이딩 해야한다.
+
+```
+abstract class A{
+	public abstract void b();
+}
+
+class B extends a{
+	public void b(){
+		System.out.print("오버라이딩 반드시 해야함");
+	}
+}
+```
+
+## interface
+- abstract class에서 abstract기능만 빼가지고 abstract method를 interface로 만드는 것이다
+- 궁극적인 이유는 모듈화를 위해서다(여러군대의 재사용성)
+- interface도 abstract처럼 반드시 오버라이딩을 해야한다.
+- interface는 abstract를 쓰지 않아도 이미 내부적으로 가지고 있다.
+- 필드를 만든다면 반드시 상수를 강요한다.
+
+```
+interface Fee{
+	[public final static] String bbb = "interface정의";
+	//==> 이것은 public final static의 특성을 반드시 가진다.
+	//==> 무조건 상수로 정의해야한다.
+
+	public void b();
+}
+
+class B extends A implements b{
+	public void b(){
+		System.out.println("오버라이딩 반드시 해야함")
+	}
+}
+
+```
+
+
+# reference 형변환(equals)
+
+## 예제
+
+```
+B b1 = new B(1, "홍");
+B b2 = new B(1, "홍");
+
+b1 == b2 ==> F
+b1.equals(b2) ==> F
+```
+
+## 설명
+- 모든 java class는 compile시에 Objcet를 하이락키로 가지고있다(extends Object를 하고있다) => 상위로 가지고 있다
+- 때문에 Object에 존재하는 equals를 사용할 수 있다.
+- equals를 재정의(오버라이딩)은 추상화(abstract)가 아니여서 반드시 할 필요는 없다. 하지만 비교를 하고싶다면 재정의해도 된다.
+
+<img src="https://user-images.githubusercontent.com/92348108/155113890-7f217106-fc61-4978-95d6-3778f61644dd.jpg" alt="" />
