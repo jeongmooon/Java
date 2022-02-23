@@ -1,8 +1,14 @@
 class Util {
-	String[] b;
+	
 	public int findPrimeCount(int limit){
+		int[] arr = findPrimeReturnArray(limit);
+		return arr.length;
+	}
+
+	public int[] findPrimeReturnArray(int limit){
 		boolean prime = false;
-		String a = "";
+		String[] stringArr;
+		String stringPrime = "";
 
 		for(int i=2; i<=limit; i++){
 		// 초기값 초기화
@@ -15,19 +21,17 @@ class Util {
 		}
 		if(!prime){
 			// false 라면 소수 true라면 소수가아님
-			a += (i+",");
+			stringPrime += (i+",");
 			}
 		}
-		b = a.split(",");
-		return b.length;
-	}
+		stringArr = stringPrime.split(",");
 
-	public int[] findPrimeReturnArray(int limit){
-		int a[] = new int[b.length];
-		for(int i=0; i<b.length; i++){
-			a[i] = Integer.parseInt(b[i]);
+		int intArr[] = new int[stringArr.length];
+		for(int i=0; i<stringArr.length; i++){
+			intArr[i] = Integer.parseInt(stringArr[i]);
 		}
-		return a;
+
+		return intArr;
 	}
 
 }

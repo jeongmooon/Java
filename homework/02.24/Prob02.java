@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Prob02 {
 	public String leftPad(String str, int size, char padChar){
 		if(str.length()>size){
