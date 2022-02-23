@@ -3,13 +3,17 @@ public class Prob02 {
 		if(str.length()>size){
 			return str;
 		}
+		/*
 		int c = size-str.length();
 		String b ="";
 		for(int i=0; i<c; i++){
 			b += padChar;
 		}
-
 		return b+" "+str;
+		*/
+
+
+		return String.format("%"+size+"s",str).replace(' ',padChar);
 	}
 	//main
 	public static void main(String[] args) {
