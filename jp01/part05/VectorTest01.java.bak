@@ -15,7 +15,6 @@ public class VectorTest01 {
 		int in1 =20;
 		String a = Integer.toString(in1);
 		System.out.println(">>>>>>"+a);
-
 		String s1 = new String("1. È«");
 		vector.add(s1);
 		vector.add(new String("2. µ¿"));

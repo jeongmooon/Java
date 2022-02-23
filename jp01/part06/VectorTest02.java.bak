@@ -19,9 +19,9 @@ public class VectorTest02 extends Vector {
 	//method
 	// Vector가 관리(?, 자장)한 문자열 값을 출력하는 Method정의
 	public void pringString(Vector vector){
-		for(int i=0; i<vector.size(); i++){
-			System.out.print((String)vector.elementAt(i));
-		}
+		//for(int i=0; i<vector.size(); i++){
+		//	System.out.print((String)vector.elementAt(i));
+		//}
 
 		//위의 for문과 비교하여 이해하자./ JDK1.5에 추가된 기능 :: Enhanced For Loop
 		//Vector 내부에 저장된 값을 size()만큼 반복, 1EA 씩 추출 Object에 다마 준다.

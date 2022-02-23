@@ -3,6 +3,7 @@ public class Prob02 {
 	public static void main(String[] args){
 		int limit = 50;
 		boolean prime = false;
+		String a = "";
 
 		for(int i=2; i<=limit; i++){
 			// 초기값 초기화

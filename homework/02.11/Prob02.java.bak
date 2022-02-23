@@ -3,6 +3,7 @@ public class Prob02 {
 	public static void main(String[] args){
 		int limit = 50;
 		boolean prime = false;
+		String a = "";
 
 		for(int i=2; i<=limit; i++){
 			// 초기값 초기화
@@ -14,8 +15,10 @@ public class Prob02 {
 				}
 			}
 			if(!prime){
-				// false 라면 소수
+				// false 라면 소수 true라면 소수가아님
 				System.out.println(i);
+				a += (i+",");
+				System.out.println(a);
 			}
 		}
 	}// main

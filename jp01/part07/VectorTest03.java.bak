@@ -42,7 +42,7 @@ public class VectorTest03 {
 		}
 
 		System.out.println("\n ==> APIÈ®ÀÎ ");
-		vector.set(3, "5. È«±æ¼ø");
+		vector.set("5. È«±æ¼ø",3);
 		for(int i=0; i<vector.size(); i++){
 			System.out.print(vector.get(i));
 		}

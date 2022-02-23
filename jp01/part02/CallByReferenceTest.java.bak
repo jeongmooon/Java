@@ -22,6 +22,6 @@ public class CallByReferenceTest {
 
 		//method의 인자 값으로 int (Reference DataType)
 		call.referenceChange(call);
-		System.out.println("number : "+call.number);
+		System.out.println("number : "+call);
 	}//main
 }//class
