@@ -1243,7 +1243,6 @@ public class Prob01 {
 	}
 }
 
-
 ```
 
 
@@ -1358,6 +1357,289 @@ public class TestShape {
 			shape[i].calculationArea();
 			shape[i].print();
 		}
+	}
+}
+
+```
+
+
+## Adder
+- 문자열 합구하기기
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155291525-073f6dce-1124-4bd4-a4d2-2673337923ef.png" />
+
+### 코드
+
+```
+public class Adder {
+	public int excute(String expr){
+		int result = 0;
+		String[] a = expr.split("\\+");
+		 for(int i=0 ; i<a.length ; i++) {
+            result += Integer.parseInt(a[i]);
+        }
+		return result;
+	}
+
+	/*public int excute(String expr){
+		int result = 0;+
+		String strNum ="";
+		for(int i=0; i<expr.length();i++){
+			char c = expr.charAt(i);
+			if(c=='+'){
+				result += Integer.parseInt(strNum);
+				strNum ="+";
+			} else{
+				strNum += c;
+			}			
+		}
+		return (result+Integer.parseInt(strNum));
+	}*/
+
+	public static void main(String[] args) {
+		Adder adder = new Adder();
+		String expr ="3+5+9+1";
+		System.out.println(expr+"="+adder.excute(expr));
+		String expr1 ="11+45+77+3";
+		System.out.println(expr+"="+adder.excute(expr1));
+		String expr2 ="33+51+12+11";
+		System.out.println(expr+"="+adder.excute(expr2));
+	}
+}
+
+```
+
+
+
+
+<hr />
+
+
+
+# 02.24 과제
+
+## Prob01
+- 소수갯수, 소수 찾기
+- Array연습
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155291799-adf43d9d-3ad9-45b1-a2ae-5f5da45170eb.png" />
+
+### 코드
+
+```
+class Util {
+	
+	public int findPrimeCount(int limit){
+		int[] arr = findPrimeReturnArray(limit);
+		return arr.length;
+	}
+
+	public int[] findPrimeReturnArray(int limit){
+		boolean prime = false;
+		String[] stringArr;
+		String stringPrime = "";
+
+		for(int i=2; i<=limit; i++){
+		// 초기값 초기화
+		prime = false;
+		for(int j=2; j<i; j++){
+			if(i%j ==0){
+				// i부터 i-1까지의 모든수를 나눠서 나머지가 0 이있다면 소수가 아님
+				prime = true;
+			}
+		}
+		if(!prime){
+			// false 라면 소수 true라면 소수가아님
+			stringPrime += (i+",");
+			}
+		}
+		stringArr = stringPrime.split(",");
+
+		int intArr[] = new int[stringArr.length];
+		for(int i=0; i<stringArr.length; i++){
+			intArr[i] = Integer.parseInt(stringArr[i]);
+		}
+
+		return intArr;
+	}
+
+}
+public class Prob01 {	
+
+	public static void main(String[] args) {
+		int limit = 67;
+		Util util = new Util();
+
+		int primeCount = util.findPrimeCount(limit);
+		System.out.println("1~ "+limit+"까지의 소수의 갯수는 "+primeCount +"EA 이며 소수는 아래와 같다");
+		System.out.println("//////////////////////////////////////////////");
+
+		int[] primeArray = util.findPrimeReturnArray(limit);
+
+		for(int i=0; i<primeArray.length; i++){
+			System.out.print(primeArray[i]+((primeArray.length-1) != i ? "," :""));
+		}
+	}
+}
+
+```
+
+
+## Prob01
+- 소수갯수, 소수 찾기
+- Array연습
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155291799-adf43d9d-3ad9-45b1-a2ae-5f5da45170eb.png" />
+
+### 코드
+
+```
+class Util {
+	
+	public int findPrimeCount(int limit){
+		int[] arr = findPrimeReturnArray(limit);
+		return arr.length;
+	}
+
+	public int[] findPrimeReturnArray(int limit){
+		boolean prime = false;
+		String[] stringArr;
+		String stringPrime = "";
+
+		for(int i=2; i<=limit; i++){
+		// 초기값 초기화
+		prime = false;
+		for(int j=2; j<i; j++){
+			if(i%j ==0){
+				// i부터 i-1까지의 모든수를 나눠서 나머지가 0 이있다면 소수가 아님
+				prime = true;
+			}
+		}
+		if(!prime){
+			// false 라면 소수 true라면 소수가아님
+			stringPrime += (i+",");
+			}
+		}
+		stringArr = stringPrime.split(",");
+
+		int intArr[] = new int[stringArr.length];
+		for(int i=0; i<stringArr.length; i++){
+			intArr[i] = Integer.parseInt(stringArr[i]);
+		}
+
+		return intArr;
+	}
+
+}
+public class Prob01 {	
+
+	public static void main(String[] args) {
+		int limit = 67;
+		Util util = new Util();
+
+		int primeCount = util.findPrimeCount(limit);
+		System.out.println("1~ "+limit+"까지의 소수의 갯수는 "+primeCount +"EA 이며 소수는 아래와 같다");
+		System.out.println("//////////////////////////////////////////////");
+
+		int[] primeArray = util.findPrimeReturnArray(limit);
+
+		for(int i=0; i<primeArray.length; i++){
+			System.out.print(primeArray[i]+((primeArray.length-1) != i ? "," :""));
+		}
+	}
+}
+
+```
+
+
+## Prob02
+- API연습
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155292048-7c5b2574-45f4-4970-8a65-24e72a757262.png" />
+
+### 코드
+
+```
+public class Prob02 {
+	public String leftPad(String str, int size, char padChar){
+		if(str.length()>size){
+			return str;
+		}
+		int c = size-str.length();
+		String b ="";
+		for(int i=0; i<c; i++){
+			b += padChar;
+		}
+
+		return b+" "+str;
+	}
+	//main
+	public static void main(String[] args) {
+		Prob02 prob03 = new Prob02();
+
+		System.out.println(prob03.leftPad("ABC",6,'#'));
+		System.out.println(prob03.leftPad("ABC",5,'$'));
+		System.out.println(prob03.leftPad("ABC",2,'&'));
+	}
+}
+
+```
+
+
+## StringUtil
+- API연습
+- 문자열 길이, 합계 숫자등등 구하기
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155292259-7366ac59-757e-4590-838b-9b9b6aaf10cd.png" />
+
+### 코드
+
+```
+public class StringUtil {
+	public static String replaceString(String[] arr){
+		String[] strArr = new String[arr.length];
+		String str = "";
+		int[] rArr = new int[arr.length];
+		int r = 0;
+		int max = rArr[0];
+		int maxIndex = 0;
+		for(int i=0; i<arr.length; i++){
+			r=0;
+			for(int j=0; j<arr[i].length(); j++){
+				char c = arr[i].charAt(j);
+				if(97 == c){
+					str += (char)(c-32);					
+					r++;
+				} else{
+					str += c;
+				}
+				rArr[i] = r;
+			}
+			strArr[i] = str;
+			str="";
+			//System.out.println(rArr[i]);
+			//System.out.println(strArr[i]);
+			if(max < rArr[i]){
+				max = rArr[i];
+				maxIndex =i;
+			}
+		}		
+		return strArr[maxIndex];
+	}
+	public static void main(String[] args) {
+		String[] arr = {"java program","array","java program area","append"};
+		String result = StringUtil.replaceString(arr);
+		System.out.println("변경된 문자열 "+result);
 	}
 }
 
