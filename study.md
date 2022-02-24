@@ -1607,39 +1607,159 @@ public class Prob02 {
 ```
 public class StringUtil {
 	public static String replaceString(String[] arr){
-		String[] strArr = new String[arr.length];
-		String str = "";
 		int[] rArr = new int[arr.length];
 		int r = 0;
-		int max = rArr[0];
+		int max = 0;
 		int maxIndex = 0;
+
 		for(int i=0; i<arr.length; i++){
 			r=0;
 			for(int j=0; j<arr[i].length(); j++){
-				char c = arr[i].charAt(j);
-				if(97 == c){
-					str += (char)(c-32);					
+				if(97 == arr[i].charAt(j)){					
 					r++;
-				} else{
-					str += c;
 				}
 				rArr[i] = r;
 			}
-			strArr[i] = str;
-			str="";
 			//System.out.println(rArr[i]);
-			//System.out.println(strArr[i]);
 			if(max < rArr[i]){
 				max = rArr[i];
 				maxIndex =i;
 			}
 		}		
-		return strArr[maxIndex];
+		return arr[maxIndex].replace('a','A');
 	}
 	public static void main(String[] args) {
 		String[] arr = {"java program","array","java program area","append"};
 		String result = StringUtil.replaceString(arr);
 		System.out.println("변경된 문자열 "+result);
+	}
+}
+
+
+```
+
+
+<hr />
+
+
+
+# 02.25 과제
+
+## Prob01
+- static메소드 접근방식
+
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155484106-530f8d38-013a-4a10-a4b4-57d3191addbf.png" />
+
+### 코드
+
+```
+public class Prob01 {
+	public static String myReplace(String str,char oldChar, char newChar){
+		String result = "";
+		//System.out.println(newChar);
+		for(int i=0; i<str.length(); i++){
+				if(oldChar == str.charAt(i)){					
+					result += newChar;
+				} else {
+					result += str.charAt(i);
+				}					
+		}
+		return result;
+	}
+	public static void main(String[] args) {
+		System.out.println("문자열에 특정문자 변경하는 테스트");
+		System.out.println("-------Sample 1--------");
+		String str1 = myReplace("hello world",'l','*');
+		System.out.println(str1);
+
+		System.out.println("-------Sample 2--------");
+		String str2 = myReplace("hello world",' ','-');
+		System.out.println(str2);
+
+		System.out.println("-------Sample 1--------");
+		String str3 = myReplace("hello world",'a','*');
+		System.out.println(str3);
+	}
+}
+
+```
+
+## ArrayUtil
+- 배열이 변형되기 때문(data type)
+- message return
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155484535-89175fe1-d363-4c37-b9b9-a3a92e8eca6d.png" />
+
+### 코드
+
+```
+public class ArrayUtil {
+	public char[] reverseString(char[] s, int start, int end){
+		int a = 0;
+
+		char[] cs = new char[s.length];
+		char[] cs1 = new char[s.length];
+		
+		System.arraycopy(s, 0, cs, 0, s.length);
+		System.arraycopy(s, 0, cs1, 0, s.length);
+		
+		for(int i=start; i<=end; i++){
+				cs[i] = cs1[end-a];
+				a++;
+				//System.out.println(i);
+				//System.out.println("end-i"+(end-i));
+				//System.out.print(s[i]);
+			}
+		return cs;
+	}
+
+	public static void main(String[] args) {
+		ArrayUtil au = new ArrayUtil();
+		char[] s = {'J','a','v','a','P','r','o','g','r','a','m'};
+		System.out.println(au.reverseString(s,0,3));
+		System.out.println(au.reverseString(s,4,7));
+		System.out.println(au.reverseString(s,8,10));
+		System.out.println(au.reverseString(s,0,10));
+	}
+}
+
+
+```
+
+
+## ArrayCopy
+- 배열이 변형되기 때문(data type)
+- message return
+
+### 결과값
+
+<img src="https://user-images.githubusercontent.com/92348108/155485175-8b7085ba-2e2a-43be-bda8-0227a7a5afe0.png" />
+
+### 코드
+
+```
+import java.util.Vector;
+
+public class ArrayCopy {
+	public Vector<String> moveToVector(String[] datas){
+		Vector<String> arr = new Vector<String>(datas.length,10);		
+		System.out.println(arr.size());
+		for(int i=0; i<datas.length; i++){	
+			arr.add(i,datas[datas.length-1-i]);
+			//System.out.print(arr.get(i));
+		}		
+		//System.out.println(arr.get(0));
+		return arr;
+	}
+	public static void main(String[] args) {
+		ArrayCopy ac = new ArrayCopy();
+		String datas[] = {"1","2","3","4","5"};
+		System.out.println(ac.moveToVector(datas));
 	}
 }
 
