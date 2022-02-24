@@ -3,6 +3,9 @@ public class Prob02 {
 		if(str.length()>size){
 			return str;
 		}
+
+		return String.format("%"+size+"s",str).replace(' ',padChar);
+
 		/*
 		int c = size-str.length();
 		String b ="";
@@ -10,11 +13,9 @@ public class Prob02 {
 			b += padChar;
 		}
 		return b+" "+str;
-		*/
-
-
-		return String.format("%"+size+"s",str).replace(' ',padChar);
+		*/		
 	}
+
 	//main
 	public static void main(String[] args) {
 		Prob02 prob03 = new Prob02();
