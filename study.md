@@ -1,25 +1,26 @@
 # Idex
 
-- [02-11](#0211-°úÁ¦)
-- [02-16](#0216-°úÁ¦)
-- [02-17](#0217-°úÁ¦)
-- [02-18](#0218-°úÁ¦)
-- [02-22](#0222-°úÁ¦)
-- [02-23](#0223-°úÁ¦)
-
+- [02-11](#0211-ê³¼ì œ)
+- [02-16](#0216-ê³¼ì œ)
+- [02-17](#0217-ê³¼ì œ)
+- [02-18](#0218-ê³¼ì œ)
+- [02-22](#0222-ê³¼ì œ)
+- [02-23](#0223-ê³¼ì œ)
+- [02-23](#0224-ê³¼ì œ)
+- [02-23](#0225-ê³¼ì œ)
 
 <hr />
 
 
-# 02.11 °úÁ¦
+# 02.11 ê³¼ì œ
 
 ## example2
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/153554291-77706ecf-da13-499b-96ff-d470601c6334.PNG" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Example2
@@ -28,7 +29,7 @@ public class Example2
 	{
 		int a = Integer.parseInt(args[0]);
 		int i = 1;
-		System.out.println(a+"´ÜÀ» Ãâ·ÂÇÕ´Ï´Ù");
+		System.out.println(a+"ë‹¨ì„ ì¶œë ¥í•©ë‹ˆë‹¤");
 		while(i<10){			
 			System.out.println(i+"*"+a+"="+i*a);
 			i++;
@@ -40,11 +41,11 @@ public class Example2
 
 ## exapmle3
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/153554349-7b852fee-928b-429f-8bb1-f1903cefbe2c.PNG" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Example3
@@ -57,26 +58,26 @@ public class Example3
 		int sum = 0;
 
 		if(a == b){
-			// a¿Íb°¡ °°´Ù¸é
-			System.out.println("[usage]"+a+"¿Í "+b+"´Â °°´Ù");
+			// aì™€bê°€ ê°™ë‹¤ë©´
+			System.out.println("[usage]"+a+"ì™€ "+b+"ëŠ” ê°™ë‹¤");
 			return;
 		}
 
 		if(a<b){
-			// a°¡ bº¸´Ù Å©´Ù¸é
+			// aê°€ bë³´ë‹¤ í¬ë‹¤ë©´
 			i = a;
 			a = b;			
 
 		} else {
-			// a°¡ bº¸´Ù ÀÛ´Ù¸é
+			// aê°€ bë³´ë‹¤ ì‘ë‹¤ë©´
 			i = b;			
 		}
 		while(i<=a){
 				sum = sum+i;
 				i++;
 		}
-		// °á°ú°ª Ãâ·Â
-		System.out.println(Integer.parseInt(args[0])+"~"+b+"ÀÇ ÃÑÇÕÀº "+sum+"ÀÌ´Ù");
+		// ê²°ê³¼ê°’ ì¶œë ¥
+		System.out.println(Integer.parseInt(args[0])+"~"+b+"ì˜ ì´í•©ì€ "+sum+"ì´ë‹¤");
 	}//main
 }//class
 
@@ -84,20 +85,20 @@ public class Example3
 
 ## exapmle4
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/153554464-5c48edd4-c2a0-46d1-9a91-26f469d7b0a8.PNG" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Example4
 {
 	public static void main(String[] args) 
 	{		
-		System.out.println("±¸±¸´Ü Ãâ·Â±â");
+		System.out.println("êµ¬êµ¬ë‹¨ ì¶œë ¥ê¸°");
 		for(int i=0; i<9; i++){
-			System.out.println((i+1)+"´Ü");
+			System.out.println((i+1)+"ë‹¨");
 			for(int j=0; j<9; j++){
 				int a = i+1;
 				int b = j+1;
@@ -112,11 +113,11 @@ public class Example4
 
 ## exapmle5
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/153554505-0e54b2ef-6dbc-4a95-ad3a-78d35b99d735.PNG" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Example5
@@ -125,9 +126,9 @@ public class Example5
 	{
 		int[][] gugu = new int[9][9];
 		
-		System.out.println("±¸±¸´Ü Ãâ·Â±â");
+		System.out.println("êµ¬êµ¬ë‹¨ ì¶œë ¥ê¸°");
 		for(int i=0; i<gugu.length; i++){
-			System.out.println((i+1)+"´Ü");
+			System.out.println((i+1)+"ë‹¨");
 			for(int j=0; j<gugu[i].length; j++){
 				int a = i+1;
 				int b = j+1;
@@ -141,16 +142,16 @@ public class Example5
 
 ```
 
-# 02.16 °úÁ¦
+# 02.16 ê³¼ì œ
 
 ## prob01
-¼ıÀÚ±¸ÇÏ±â
+ìˆ«ìêµ¬í•˜ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154236270-7baee156-c8a8-4e2d-b403-fbf6f75d61b6.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 import java.util.Scanner;
@@ -161,27 +162,27 @@ public class Prob01 {
 		int number = 0;
 		int count = 0;
 		int sum = 0;
-		// ÃÖ°í¼ıÀÚ
+		// ìµœê³ ìˆ«ì
 		int maxInt=1001;
 
 		Scanner keyboard = new Scanner(System.in);
-		System.out.print(" ¾çÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print(" ì–‘ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		number = keyboard.nextInt();
 		
-		// ¹üÀ§
+		// ë²”ìœ„
 		if(0<number && number<maxInt){
-			// ¼ıÀÚ¹İº¹¹®
+			// ìˆ«ìë°˜ë³µë¬¸
 			for(int i=1; i<maxInt; i++){
-				// Ä«¿îÆ®, ÇÕ ±¸ÇÏ±â
+				// ì¹´ìš´íŠ¸, í•© êµ¬í•˜ê¸°
 				if(i%number == 0){
 					count++;
 					sum += i;
 				}
 			}
 		}
-		// °á°ú°ª
-		System.out.println(number + "ÀÇ ¹è¼ö °³¼ö = " +count);
-		System.out.println(number + "ÀÇ ¹è¼ö ÇÕ = " + sum);
+		// ê²°ê³¼ê°’
+		System.out.println(number + "ì˜ ë°°ìˆ˜ ê°œìˆ˜ = " +count);
+		System.out.println(number + "ì˜ ë°°ìˆ˜ í•© = " + sum);
 	}// main
 }// calss
 
@@ -189,13 +190,13 @@ public class Prob01 {
 
 
 ## prob02
-¼ÒÆÃÇÏ±â
+ì†ŒíŒ…í•˜ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154236482-e5e00c78-f7a7-44be-853d-b28143d49f1e.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Prob02 {
@@ -211,7 +212,7 @@ public class Prob02 {
 				
 				if(array[i] > array[j]){
 					//c++;
-					// °ª ´ëÀÔ
+					// ê°’ ëŒ€ì…
 					array[i] = copyArray[j];
 					array[j] = copyArray[i];
 										
@@ -234,13 +235,13 @@ public class Prob02 {
 
 
 ## prob03
-À±´Ş±¸ÇÏ±â
+ìœ¤ë‹¬êµ¬í•˜ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154236701-980e787d-e481-4b91-aaa2-9da07e3f8022.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Prob03 {
@@ -261,7 +262,7 @@ public class Prob03 {
 			maxDay = 28;
 		}
 
-		System.out.println(year+"³â "+month+"¿ùÀÇ ¸»ÀÏÀº "+maxDay+"ÀÏ ÀÔ´Ï´Ù");
+		System.out.println(year+"ë…„ "+month+"ì›”ì˜ ë§ì¼ì€ "+maxDay+"ì¼ ì…ë‹ˆë‹¤");
 	}
 }
 
@@ -269,23 +270,23 @@ public class Prob03 {
 ```
 
 
-# 02.17 °úÁ¦
+# 02.17 ê³¼ì œ
 
 ## prob01
-µÎ¼ıÀÚÀÇ Â÷ÀÌ Àı´ë°ª ±¸ÇÏ±â
+ë‘ìˆ«ìì˜ ì°¨ì´ ì ˆëŒ€ê°’ êµ¬í•˜ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154237039-10c41f87-d308-4a0d-8a56-c642f74fc826.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 import java.util.Scanner;
 
 public class  Prob01 {
 	
-	// ¸Ş¼Òµå ½Ã±×´ÏÃ³·Î ÀÛ¼º
+	// ë©”ì†Œë“œ ì‹œê·¸ë‹ˆì²˜ë¡œ ì‘ì„±
 	public int abs(int num1, int num2){
 		if(num1 <num2){
 			return -(num1-num2);
@@ -299,25 +300,25 @@ public class  Prob01 {
 	public static void main(String[] args) {
 
 		Scanner keyboard = new Scanner(System.in);
-		System.out.print("¼ıÀÚ µÎ°³¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä>>");
+		System.out.print("ìˆ«ì ë‘ê°œë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”>>");
 		int num1 = keyboard.nextInt();
 		int num2 = keyboard.nextInt();
 
 		Prob01 prob = new Prob01();
-		System.out.println("µÎ¼öÀÇ Â÷´Â "+prob.abs(num1, num2));
+		System.out.println("ë‘ìˆ˜ì˜ ì°¨ëŠ” "+prob.abs(num1, num2));
 	}// main
 
 }//class
 ```
 
 ## SortUtil
-¼ÒÆÃÇÏ±â¸Ş¼Òµå ¸¸µé±â
+ì†ŒíŒ…í•˜ê¸°ë©”ì†Œë“œ ë§Œë“¤ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154237248-bf50aafd-2b47-45a3-8a33-8f999f43b4c2.png" />
 
-#### ÄÚµå
+#### ì½”ë“œ
 
 ```
 public class SortUtil {
@@ -331,7 +332,7 @@ public class SortUtil {
 			for(int j=i; j<array.length; j++){
 				
 				if(array[i] > array[j]){
-					// °ª ´ëÀÔ
+					// ê°’ ëŒ€ì…
 					array[i] = copyArray[j];
 					array[j] = copyArray[i];
 										
@@ -371,13 +372,13 @@ public class SortUtil {
 
 
 ## Prob02
-¿ªÇÇ¶ó¹Ìµå º°Âï±â
+ì—­í”¼ë¼ë¯¸ë“œ ë³„ì°ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154237693-ab4a2efb-5b5e-420d-a90d-710e0fe52493.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 import java.util.Scanner;
@@ -388,48 +389,48 @@ public class Prob02 {
 	public static void main(String[] args) {
 		//int num = Integer.parseInt(args[0]);
 		Scanner keyboard = new Scanner(System.in);
-		System.out.print("0º¸´Ù Å« È¦¼ö¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä>>");
+		System.out.print("0ë³´ë‹¤ í° í™€ìˆ˜ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”>>");
 		int num = keyboard.nextInt();
 
 		if(num%2 == 1 && 0 < num){
 			for(int i=1; i<=num; i++){
-				// String »ı¼º
+				// String ìƒì„±
 				String s = "";
 				for(int j=1; j<i; j++){
-					// ¿ŞÂÊ ºóÄ­ Âï±â
+					// ì™¼ìª½ ë¹ˆì¹¸ ì°ê¸°
 					s += " ";
 				}
 				for(int j = 1; j <= num-2*i+2; j++){
-					// º°Âï±â
+					// ë³„ì°ê¸°
 					s += "*";
 				}
 				System.out.println(s);
 				if( i > num/2){
-					// º°Âï±â°¡ ³¡³ª°í ³ª¸ÓÁöÁÙ ¾ø¾Ö±â
+					// ë³„ì°ê¸°ê°€ ëë‚˜ê³  ë‚˜ë¨¸ì§€ì¤„ ì—†ì• ê¸°
 					System.out.println();
 					return;
 				}
 			}			
 		} else {
-			System.out.println("0º¸´Ù Å« È¦¼ö¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù.");
+			System.out.println("0ë³´ë‹¤ í° í™€ìˆ˜ë§Œ ì…ë ¥ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 		}
 	}//main
 }//class
 ```
 
-# 02.18 °úÁ¦
+# 02.18 ê³¼ì œ
 
 ## prob01
-- Á¤»ï°¢Çü Æ¯¼ö¹®ÀÚ Âï±â
-- Æ¯ÀÌ»çÇ×
-	- Å°º¸µå·Î ±¸ÇöÇÔ
-	- ¸Ş¼Òµå·Î ¸¸µë
+- ì •ì‚¼ê°í˜• íŠ¹ìˆ˜ë¬¸ì ì°ê¸°
+- íŠ¹ì´ì‚¬í•­
+	- í‚¤ë³´ë“œë¡œ êµ¬í˜„í•¨
+	- ë©”ì†Œë“œë¡œ ë§Œë“¬
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154442617-5ea12bca-8c08-454a-823b-6d6a5722ce7a.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 import java.util.Scanner;
@@ -439,16 +440,16 @@ public class Prob01 {
 	// Method
 	public void printStar(String star, int num){
 		for(int i=1; i<=num; i++){
-				// String »ı¼º
+				// String ìƒì„±
 				String s = "";
 
 				for(int j=0;  j<=num-i; j++){
-					// ¿ŞÂÊ ºóÄ­ Âï±â
+					// ì™¼ìª½ ë¹ˆì¹¸ ì°ê¸°
 					s += " ";
 				}
 
 				for(int j=1; j<=(2*i)-1; j++){
-					// º°Âï±â
+					// ë³„ì°ê¸°
 					s += star;
 				}
 				System.out.println(s);
@@ -460,14 +461,14 @@ public class Prob01 {
 		//int num = Integer.parseInt(args[0]);
 		Scanner keyboard = new Scanner(System.in);
 		
-		System.out.print("¿øÇÏ´Â ±âÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.print("ì›í•˜ëŠ” ê¸°í˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		String star = keyboard.next();
 
-		System.out.print("1º¸´Ù Å« ¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä>>");
+		System.out.print("1ë³´ë‹¤ í° ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”>>");
 		int num = keyboard.nextInt();
 
 		if(num<1){
-			System.out.println("1º¸´Ù Å« ¼ıÀÚ ÀÔ·Â");
+			System.out.println("1ë³´ë‹¤ í° ìˆ«ì ì…ë ¥");
 		}
 
 		new Prob01().printStar(star,num);
@@ -478,18 +479,18 @@ public class Prob01 {
 
 
 ## prob02
-- ÅÂ¾î³­ ´ŞÀ» ¹Ş¾Æ °èÀı Ãâ·ÂÇÏ±â
-- Æ¯ÀÌ»çÇ×
-	- ¸Å°³º¯¼ö·Î ¸¸µë
-	- ¸Ş¼ÒµåÀÇ ½Ã±×´ÏÃÄ·Î ¸¸µë
-	- ¹İµå½Ã switch¹®À» »ç¿ë
-	- ¿¡·¯°ª °É·¯³¾°Í
+- íƒœì–´ë‚œ ë‹¬ì„ ë°›ì•„ ê³„ì ˆ ì¶œë ¥í•˜ê¸°
+- íŠ¹ì´ì‚¬í•­
+	- ë§¤ê°œë³€ìˆ˜ë¡œ ë§Œë“¬
+	- ë©”ì†Œë“œì˜ ì‹œê·¸ë‹ˆì³ë¡œ ë§Œë“¬
+	- ë°˜ë“œì‹œ switchë¬¸ì„ ì‚¬ìš©
+	- ì—ëŸ¬ê°’ ê±¸ëŸ¬ë‚¼ê²ƒ
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154443026-fc829cfa-408d-4fb5-b8d7-3fe1b3d329fc.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Prob02 {
@@ -501,38 +502,38 @@ public class Prob02 {
 			case 1 :
 			case 2 :
 			case 3 :
-				s = "º½";
+				s = "ë´„";
 				break;
 			case 4 :
 			case 5 :
 			case 6 :
-				s = "¿©¸§";
+				s = "ì—¬ë¦„";
 				break;
 			case 7 :
 			case 8 :
 			case 9 :
-				s = "°¡À»";
+				s = "ê°€ì„";
 				break;
 			case 10 :
 			case 11:
 			case 12 :
-				s = "°Ü¿ï";
+				s = "ê²¨ìš¸";
 				break;
 		}
-		System.out.println(s+"¿¡ ÅÂ¾î³ª¼Ì³×¿ä.");
+		System.out.println(s+"ì— íƒœì–´ë‚˜ì…¨ë„¤ìš”.");
 	}
 
 	//main
 	public static void main(String[] args) {
 		int month = Integer.parseInt(args[0]);
 		
-		//ÇÊÅÍ¸µ
+		//í•„í„°ë§
 		if (month<1 || 12<month) {
-			System.out.println("1~12 »çÀÌÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼Å¾ß ÇÕ´Ï´Ù.");
+			System.out.println("1~12 ì‚¬ì´ì˜ ìˆ«ìë¥¼ ì…ë ¥í•˜ì…”ì•¼ í•©ë‹ˆë‹¤.");
 			return;
 		}
 		
-		//È£Ãâ
+		//í˜¸ì¶œ
 		new Prob02().printSeason(month);
 	}// main
 }//class
@@ -541,17 +542,17 @@ public class Prob02 {
 
 
 ## TestRectabgle
-- »ç°¢Çü µÎ°³ ÀÔ·Â¹Ş°í ºñ±³ÇÏ±â
-- Æ¯ÀÌ»çÇ×
-	- Å°º¸µå »ç¿ë
-	- Rectangle Å¬·¡½º¸¦ ½Å±Ô·Î ÀÛ¼ºÇÏ½Ã¿À
-	- get,set»ç¿ë
+- ì‚¬ê°í˜• ë‘ê°œ ì…ë ¥ë°›ê³  ë¹„êµí•˜ê¸°
+- íŠ¹ì´ì‚¬í•­
+	- í‚¤ë³´ë“œ ì‚¬ìš©
+	- Rectangle í´ë˜ìŠ¤ë¥¼ ì‹ ê·œë¡œ ì‘ì„±í•˜ì‹œì˜¤
+	- get,setì‚¬ìš©
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154443443-b2687a0c-0d96-4705-b689-8f8542d44648.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 import java.util.Scanner;
@@ -613,42 +614,42 @@ public class TestRectangle {
 		Scanner keyboard = new Scanner(System.in);
 
 		Rectangle rec1 = new Rectangle();
-		System.out.println("Ã¹¹øÂ° Á÷»ç°¢ÇüÀÇ »ö±ò");
+		System.out.println("ì²«ë²ˆì§¸ ì§ì‚¬ê°í˜•ì˜ ìƒ‰ê¹”");
 		rec1.setColor(keyboard.next());
 
-		System.out.println("Ã¹¹øÂ° Á÷»ç°¢ÇüÀÇ °¡·Î");
+		System.out.println("ì²«ë²ˆì§¸ ì§ì‚¬ê°í˜•ì˜ ê°€ë¡œ");
 		rec1.setWidth(keyboard.nextInt());
 
-		System.out.println("Ã¹¹øÂ° Á÷»ç°¢ÇüÀÇ ¼¼·Î");
+		System.out.println("ì²«ë²ˆì§¸ ì§ì‚¬ê°í˜•ì˜ ì„¸ë¡œ");
 		rec1.setLength(keyboard.nextInt());
 
 
 		Rectangle rec2 = new Rectangle();
-		System.out.println("µÎ¹øÂ° Á÷»ç°¢ÇüÀÇ »ö±ò");
+		System.out.println("ë‘ë²ˆì§¸ ì§ì‚¬ê°í˜•ì˜ ìƒ‰ê¹”");
 		rec2.setColor(keyboard.next());
 
-		System.out.println("µÎ¹øÂ° Á÷»ç°¢ÇüÀÇ °¡·Î");
+		System.out.println("ë‘ë²ˆì§¸ ì§ì‚¬ê°í˜•ì˜ ê°€ë¡œ");
 		rec2.setWidth(keyboard.nextInt());
 
-		System.out.println("µÎ¹øÂ° Á÷»ç°¢ÇüÀÇ ¼¼·Î");
+		System.out.println("ë‘ë²ˆì§¸ ì§ì‚¬ê°í˜•ì˜ ì„¸ë¡œ");
 		rec2.setLength(keyboard.nextInt());
 		
-		// TODO 1) µÎ Á÷»ç°¢ÇüÀÇ ³ĞÀÌ¸¦ ºñ±³ÇÏ½Ã¿À
+		// TODO 1) ë‘ ì§ì‚¬ê°í˜•ì˜ ë„“ì´ë¥¼ ë¹„êµí•˜ì‹œì˜¤
 		if(rec1.area() > rec2.area()){
-			System.out.println("³ĞÀÌ´Â "+rec1.getColor()+"Á÷»ç°¢ÇüÀÌ ´õ Å®´Ï´Ù");
+			System.out.println("ë„“ì´ëŠ” "+rec1.getColor()+"ì§ì‚¬ê°í˜•ì´ ë” í½ë‹ˆë‹¤");
 		} else if(rec1.area() < rec2.area()){
-			System.out.println("³ĞÀÌ´Â "+rec2.getColor()+"Á÷»ç°¢ÇüÀÌ ´õ Å®´Ï´Ù");
+			System.out.println("ë„“ì´ëŠ” "+rec2.getColor()+"ì§ì‚¬ê°í˜•ì´ ë” í½ë‹ˆë‹¤");
 		} else {
-			System.out.println("³ĞÀÌ´Â °°½À´Ï´Ù");
+			System.out.println("ë„“ì´ëŠ” ê°™ìŠµë‹ˆë‹¤");
 		}
 
-		// TODO 2) µÎ Á÷»ç°¢ÇüÀÇ µÑ·¹¸¦ ºñ±³ÇÏ½Ã¿À
+		// TODO 2) ë‘ ì§ì‚¬ê°í˜•ì˜ ë‘˜ë ˆë¥¼ ë¹„êµí•˜ì‹œì˜¤
 		if(rec1.perimeter() > rec2.perimeter()){
-			System.out.println("µÑ·¹´Â "+rec1.getColor()+"Á÷»ç°¢ÇüÀÌ ´õ Å®´Ï´Ù");
+			System.out.println("ë‘˜ë ˆëŠ” "+rec1.getColor()+"ì§ì‚¬ê°í˜•ì´ ë” í½ë‹ˆë‹¤");
 		} else if(rec1.perimeter() < rec2.perimeter()){
-			System.out.println("µÑ·¹´Â "+rec2.getColor()+"Á÷»ç°¢ÇüÀÌ ´õ Å®´Ï´Ù");
+			System.out.println("ë‘˜ë ˆëŠ” "+rec2.getColor()+"ì§ì‚¬ê°í˜•ì´ ë” í½ë‹ˆë‹¤");
 		} else {
-			System.out.println("µÑ·¹´Â °°½À´Ï´Ù");
+			System.out.println("ë‘˜ë ˆëŠ” ê°™ìŠµë‹ˆë‹¤");
 		}
 	}//main
 }// class
@@ -656,22 +657,22 @@ public class TestRectangle {
 ```
 
 
-# 02.20 °úÁ¦
+# 02.20 ê³¼ì œ
 
 ## prob01
-- È¦Â¦ ³ª´²¼­ ÇÕ±¸ÇÏ±â
-- Æ¯ÀÌ»çÇ×
-	- ³ª¸ÓÁö ¿¬»êÀÚ
-	- ¸Ş¼Òµå·Î ¸¸µë
+- í™€ì§ ë‚˜ëˆ ì„œ í•©êµ¬í•˜ê¸°
+- íŠ¹ì´ì‚¬í•­
+	- ë‚˜ë¨¸ì§€ ì—°ì‚°ì
+	- ë©”ì†Œë“œë¡œ ë§Œë“¬
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154640119-37248f61-d765-4aa8-9a18-51044c460b1e.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
-// È¦¼öÀÇ ÇÕ°ú Â¦¼öÀÇ ÇÕÀ» Ãâ·ÂÇÏ±â
+// í™€ìˆ˜ì˜ í•©ê³¼ ì§ìˆ˜ì˜ í•©ì„ ì¶œë ¥í•˜ê¸°
 public class Prob01 {
 	//method
 	public void calc(int[] ix){
@@ -684,8 +685,8 @@ public class Prob01 {
 				b += ix[i];
 			}
 		}
-		System.out.println("È¦¼öÀÇ ÇÕ : "+b);
-		System.out.println("Â¦¼öÀÇ ÇÕ : "+a);
+		System.out.println("í™€ìˆ˜ì˜ í•© : "+b);
+		System.out.println("ì§ìˆ˜ì˜ í•© : "+a);
 	}
 
 	//main
@@ -694,9 +695,9 @@ public class Prob01 {
 		int [] ib = new int[]{1,2,3,4,5};
 
 		Prob01 p = new Prob01();
-		System.out.println("(¹è¿­ ia)");
+		System.out.println("(ë°°ì—´ ia)");
 		p.calc(ia);
-		System.out.println("(¹è¿­ ib)");
+		System.out.println("(ë°°ì—´ ib)");
 		p.calc(ib);
 	}
 }
@@ -704,18 +705,18 @@ public class Prob01 {
 ```
 
 ## FactoriaUtil
-- ÆÑÅä¸®¾ó ±¸ÇÏ±â
-- Æ¯ÀÌ»çÇ×
-	- Å°º¸µå »ç¿ë
-	- ¸Ş¼Òµå·Î ¸¸µë
-	- Àç±ÍÀûÀÎ ¹æ¹ı ÀÌ¿ë
+- íŒ©í† ë¦¬ì–¼ êµ¬í•˜ê¸°
+- íŠ¹ì´ì‚¬í•­
+	- í‚¤ë³´ë“œ ì‚¬ìš©
+	- ë©”ì†Œë“œë¡œ ë§Œë“¬
+	- ì¬ê·€ì ì¸ ë°©ë²• ì´ìš©
 	- retrun
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154640486-150df309-6a5d-4c45-b46a-70ee9f14416b.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 import java.util.Scanner;
@@ -727,7 +728,7 @@ public class FactoriaUtil {
 
 	//method
 	public int factorial(int n){
-		// ±¸ÇöÇÏ½Ã¿À		
+		// êµ¬í˜„í•˜ì‹œì˜¤		
 			i++;		
 			r = r*i;
 		if(n-i>0){	
@@ -749,18 +750,18 @@ public class FactoriaUtil {
 ```
 
 ## TestAccount
-- °èÁÂ ¸¸µé±â
-- Æ¯ÀÌ»çÇ×±â
-	- ¸Ş¼Òµå·Î ¸¸µë
+- ê³„ì¢Œ ë§Œë“¤ê¸°
+- íŠ¹ì´ì‚¬í•­ê¸°
+	- ë©”ì†Œë“œë¡œ ë§Œë“¬
 	- retrun
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154640853-0e94d8d8-33d1-44fb-9834-27cc35c93d7e.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
-#### Account BeanÄÚµå
+#### Account Beanì½”ë“œ
 ```
 class Account {
 	//Field
@@ -770,7 +771,7 @@ class Account {
 	//Constructor
 	public Account(String str){
 		accNo = str;
-		System.out.println(accNo+" °èÁÂ°¡ °³¼³µÇ¾ú½À´Ï´Ù.");
+		System.out.println(accNo+" ê³„ì¢Œê°€ ê°œì„¤ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
 	//getter
@@ -783,22 +784,22 @@ class Account {
 
 	//method
 	public void save(int save){
-		//ÀÔ±İ
+		//ì…ê¸ˆ
 		balance += save;
-		System.out.println(accNo+" °èÁÂÀÇ ÀÜ°í¿¡ "+balance+"¸¸¿øÀÌ ÀÔ±İµÇ¾ú½À´Ï´Ù.");
+		System.out.println(accNo+" ê³„ì¢Œì˜ ì”ê³ ì— "+balance+"ë§Œì›ì´ ì…ê¸ˆë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
 	public void deposit(int deposit){
-		//Ãâ±İ
+		//ì¶œê¸ˆ
 		balance -= deposit;
-		System.out.println(accNo+" °èÁÂÀÇ ÀÜ°í¿¡ "+balance+"¸¸¿øÀÌ Ãâ±İµÇ¾ú½À´Ï´Ù.");
+		System.out.println(accNo+" ê³„ì¢Œì˜ ì”ê³ ì— "+balance+"ë§Œì›ì´ ì¶œê¸ˆë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 }
 
 
 ```
 
-#### Account APPÄÚµå
+#### Account APPì½”ë“œ
 
 ```
 public class TestAccount {
@@ -809,35 +810,35 @@ public class TestAccount {
 		Account accObj = new Account("078-3762-293");
 		accNo = accObj.getAccNo();
 		balance = accObj.getBalance();
-		System.out.println(accNo+" °èÁÂÀÇ ÀÜ°í´Â "+balance+"¸¸¿øÀÔ´Ï´Ù");
+		System.out.println(accNo+" ê³„ì¢Œì˜ ì”ê³ ëŠ” "+balance+"ë§Œì›ì…ë‹ˆë‹¤");
 
 		accObj.save(100);
 		balance = accObj.getBalance();
-		System.out.println(accObj.getAccNo() + " °èÁÂÀÇ ÀÜ°í´Â "+balance+"¸¸¿øÀÔ´Ï´Ù");
+		System.out.println(accObj.getAccNo() + " ê³„ì¢Œì˜ ì”ê³ ëŠ” "+balance+"ë§Œì›ì…ë‹ˆë‹¤");
 
 		accObj.deposit(30);
 		balance = accObj.getBalance();
-		System.out.println(accNo + " °èÁÂÀÇ ÀÜ°í´Â "+balance+"¸¸¿øÀÔ´Ï´Ù");
+		System.out.println(accNo + " ê³„ì¢Œì˜ ì”ê³ ëŠ” "+balance+"ë§Œì›ì…ë‹ˆë‹¤");
 	}
 }
 
 ```
 
 ## Prob2
-- ÇĞ±³°ü¸®½Ã½ºÅÛ
-- Æ¯ÀÌ»çÇ×±â
-	- ¸Ş¼Òµå·Î ¸¸µë
+- í•™êµê´€ë¦¬ì‹œìŠ¤í…œ
+- íŠ¹ì´ì‚¬í•­ê¸°
+	- ë©”ì†Œë“œë¡œ ë§Œë“¬
 	- extends
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/154641307-6c99b743-1abb-4906-8fcd-3cf5873b0a61.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
-#### Account BeanÄÚµå
+#### Account Beanì½”ë“œ
 
-- School ÄÚµå super ÄÚµå
+- School ì½”ë“œ super ì½”ë“œ
 ```
 class School {
 	//Field
@@ -869,7 +870,7 @@ class School {
 ```
 
 
-- ³ª¸ÓÁö 3ºĞ·ù ÄÚµå
+- ë‚˜ë¨¸ì§€ 3ë¶„ë¥˜ ì½”ë“œ
 ```
 class Student extends School {
 
@@ -894,7 +895,7 @@ class Student extends School {
 
 	//method
 	public void print(){
-		System.out.println("ÀÌ\t¸§ : "+getName()+"\t\t³ª\tÀÌ : "+getAge()+"\t\tÇĞ\t¹ø : "+id);
+		System.out.println("ì´\të¦„ : "+getName()+"\t\të‚˜\tì´ : "+getAge()+"\t\tí•™\të²ˆ : "+id);
 	}
 }
 
@@ -921,7 +922,7 @@ class Teacher extends School {
 
 	//method
 	public void print(){
-		System.out.println("ÀÌ\t¸§ : "+getName()+"\t\t³ª\tÀÌ : "+getAge()+"\t\t´ã´ç  °ú¸ñ : "+subject);
+		System.out.println("ì´\të¦„ : "+getName()+"\t\të‚˜\tì´ : "+getAge()+"\t\të‹´ë‹¹  ê³¼ëª© : "+subject);
 	}
 }
 
@@ -948,21 +949,21 @@ class Employee extends School {
 
 	//method
 	public void print(){
-		System.out.println("ÀÌ\t¸§ : "+getName()+"\t\t³ª\tÀÌ : "+getAge()+"\t\tºÎ\t¼­ : "+dept);
+		System.out.println("ì´\të¦„ : "+getName()+"\t\të‚˜\tì´ : "+getAge()+"\t\të¶€\tì„œ : "+dept);
 	}
 }
 ```
 
 
-#### Account APPÄÚµå
+#### Account APPì½”ë“œ
 
 ```
 public class Prob02 {
 	public static void main(String[] args) {
 
-		Student s = new Student("È«±æµ¿", 20 , 200201);
-		Teacher t = new Teacher("ÀÌ¼ø½Å", 30, "Java");
-		Employee e = new Employee("À¯°ü¼ø", 40, "±³¹«°ú");
+		Student s = new Student("í™ê¸¸ë™", 20 , 200201);
+		Teacher t = new Teacher("ì´ìˆœì‹ ", 30, "Java");
+		Employee e = new Employee("ìœ ê´€ìˆœ", 40, "êµë¬´ê³¼");
 		
 		s.print();
 		t.print();
@@ -972,17 +973,17 @@ public class Prob02 {
 
 ```
 
-# 02.22 °úÁ¦
+# 02.22 ê³¼ì œ
 
 ## ArrayCompare
-- message Àü´Ş
-- static method»ç¿ë
+- message ì „ë‹¬
+- static methodì‚¬ìš©
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155076785-59e84740-72b8-48a6-8ec9-c11eff3f95fa.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class ArrayCompare {
@@ -1028,15 +1029,15 @@ public class ArrayCompare {
 
 
 ## Prob01
-- Book, BookMgr Å¬·¡½º ¸¸µé±â
-- private Á¢±ÙÁ¦ÇÑÀÚ »ç¿ëÇÏ±â
-- setter/getter»ç¿ëÇÏ±â
+- Book, BookMgr í´ë˜ìŠ¤ ë§Œë“¤ê¸°
+- private ì ‘ê·¼ì œí•œì ì‚¬ìš©í•˜ê¸°
+- setter/getterì‚¬ìš©í•˜ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155077198-6e0fa01c-d49b-4e31-a730-08687ee152f8.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 class Book {
@@ -1090,7 +1091,7 @@ class BookMgr{
 		for(int i=0; i<booklist.length; i++){
 			total += booklist[i].getPrice();
 		}
-		System.out.println("ÀüÃ¼ Ã¥ °¡°İÀÇ ÇÕ : "+total);
+		System.out.println("ì „ì²´ ì±… ê°€ê²©ì˜ í•© : "+total);
 	}
 }
 public class Prob01 {
@@ -1115,11 +1116,11 @@ public class Prob01 {
 
 		BookMgr mgr = new BookMgr(booklist);
 
-		System.out.println("=== Ã¥ ¸ñ·Ï ===");
+		System.out.println("=== ì±… ëª©ë¡ ===");
 		mgr.printBooklist();
 		System.out.println("");
 
-		System.out.println("=== Ã¥ °¡°İÀÇ ÃÑÇÕ ===");
+		System.out.println("=== ì±… ê°€ê²©ì˜ ì´í•© ===");
 		mgr.printTotalPrice();
 	}
 }
@@ -1128,15 +1129,15 @@ public class Prob01 {
 
 
 ## Prob02
-- ¾ÏÈ£¸¸µé±â
-- API»ç¿ëÇÏ±â
-- if, °Ç³Ê¶Ù±â »ç¿ëÇÏ±â
+- ì•”í˜¸ë§Œë“¤ê¸°
+- APIì‚¬ìš©í•˜ê¸°
+- if, ê±´ë„ˆë›°ê¸° ì‚¬ìš©í•˜ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155077427-fb5972f1-8bbe-4940-9321-586e4fdd47fd.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Prob02 {
@@ -1189,7 +1190,7 @@ public class Prob02 {
 		decodedString = str.decoded(encodedeString);
 		System.out.println(decodedString);
 		//	sourceString.length();
-		//¾Æ½ºÅ±Å¸ÀÔ
+		//ì•„ìŠ¤í‚¥íƒ€ì…
 	}
 }
 
@@ -1200,23 +1201,23 @@ public class Prob02 {
 
 
 
-# 02.23 °úÁ¦
+# 02.23 ê³¼ì œ
 
 ## Prob01
-- ±¸±¸´Ü ¸¸µé±â
-- MethodÁ¤ÀÇ
+- êµ¬êµ¬ë‹¨ ë§Œë“¤ê¸°
+- Methodì •ì˜
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155077701-df3c5c0d-6061-4f16-a701-0aaa3e739d0c.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Prob01 {
 	public static void printGugudan(int no){
 		if(no<0 || 9<no){
-			System.out.println("1 ÀÌ»ó 9 ÀÌÇÏÀÇ °ªÀ» ÀÔ·ÂÇÏ¼Å¾ß ÇÕ´Ï´Ù"); 
+			System.out.println("1 ì´ìƒ 9 ì´í•˜ì˜ ê°’ì„ ì…ë ¥í•˜ì…”ì•¼ í•©ë‹ˆë‹¤"); 
 			return;
 		}
 
@@ -1228,7 +1229,7 @@ public class Prob01 {
 		}
 	}
 	public static void main(String[] args) {
-		System.out.println("ÁÖ¾îÁø ¼ıÀÚ±îÁöÀÇ ±¸±¸´ÜÀ» Âï½À´Ï´Ù");
+		System.out.println("ì£¼ì–´ì§„ ìˆ«ìê¹Œì§€ì˜ êµ¬êµ¬ë‹¨ì„ ì°ìŠµë‹ˆë‹¤");
 		System.out.println("=========Sample 1========");
 		printGugudan(4);
 
@@ -1247,15 +1248,15 @@ public class Prob01 {
 
 
 ## TestShape
-- Polymorphism´ÙÇü¼º ¸¸µé±â ¿À¹ö·Îµù
-- Object Array¸¸µé±â
-- abstrac¸¦ ¸¸µé¾î¼­ method ¿À¹ö¶óÀÌµùÇÏ±â
+- Polymorphismë‹¤í˜•ì„± ë§Œë“¤ê¸° ì˜¤ë²„ë¡œë”©
+- Object Arrayë§Œë“¤ê¸°
+- abstracë¥¼ ë§Œë“¤ì–´ì„œ method ì˜¤ë²„ë¼ì´ë”©í•˜ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155077916-708f2d52-4de9-4eb0-b428-002ec8067c4a.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 abstract class Shape {
@@ -1285,7 +1286,7 @@ abstract class Shape {
 	}
 	
 	public void print(){
-		System.out.println(getName()+"ÀÇ ¸éÀûÀº"+area);
+		System.out.println(getName()+"ì˜ ë©´ì ì€"+area);
 	}
 
 	public abstract void calculationArea();
@@ -1309,7 +1310,7 @@ class Circle extends Shape {
 	}
 
 	public void calculationArea(){
-		// Math APIÈ£ÃâÇØ¼­ PI°ª °¡Á®¿À±â(publicÀÌ¿©¼­ È£Ãâ°¡´É)
+		// Math APIí˜¸ì¶œí•´ì„œ PIê°’ ê°€ì ¸ì˜¤ê¸°(publicì´ì—¬ì„œ í˜¸ì¶œê°€ëŠ¥)
 		super.setArea(radius*radius*Math.PI);
 		
 	}
@@ -1349,9 +1350,9 @@ public class TestShape {
 	public static void main(String[] args) {
 		Shape[] shape = new Shape[2];
 
-		shape[0] = new Circle("¿ø", 10);
+		shape[0] = new Circle("ì›", 10);
 		//System.out.print(shape[0].area);
-		shape[1] = new Rectangular("Á÷»ç°¢Çü", 10,20);
+		shape[1] = new Rectangular("ì§ì‚¬ê°í˜•", 10,20);
 
 		for(int i=0; i<shape.length; i++){
 			shape[i].calculationArea();
@@ -1364,13 +1365,13 @@ public class TestShape {
 
 
 ## Adder
-- ¹®ÀÚ¿­ ÇÕ±¸ÇÏ±â±â
+- ë¬¸ìì—´ í•©êµ¬í•˜ê¸°ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155291525-073f6dce-1124-4bd4-a4d2-2673337923ef.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Adder {
@@ -1418,17 +1419,17 @@ public class Adder {
 
 
 
-# 02.24 °úÁ¦
+# 02.24 ê³¼ì œ
 
 ## Prob01
-- ¼Ò¼ö°¹¼ö, ¼Ò¼ö Ã£±â
-- Array¿¬½À
+- ì†Œìˆ˜ê°¯ìˆ˜, ì†Œìˆ˜ ì°¾ê¸°
+- Arrayì—°ìŠµ
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155291799-adf43d9d-3ad9-45b1-a2ae-5f5da45170eb.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 class Util {
@@ -1444,16 +1445,16 @@ class Util {
 		String stringPrime = "";
 
 		for(int i=2; i<=limit; i++){
-		// ÃÊ±â°ª ÃÊ±âÈ­
+		// ì´ˆê¸°ê°’ ì´ˆê¸°í™”
 		prime = false;
 		for(int j=2; j<i; j++){
 			if(i%j ==0){
-				// iºÎÅÍ i-1±îÁöÀÇ ¸ğµç¼ö¸¦ ³ª´²¼­ ³ª¸ÓÁö°¡ 0 ÀÌÀÖ´Ù¸é ¼Ò¼ö°¡ ¾Æ´Ô
+				// ië¶€í„° i-1ê¹Œì§€ì˜ ëª¨ë“ ìˆ˜ë¥¼ ë‚˜ëˆ ì„œ ë‚˜ë¨¸ì§€ê°€ 0 ì´ìˆë‹¤ë©´ ì†Œìˆ˜ê°€ ì•„ë‹˜
 				prime = true;
 			}
 		}
 		if(!prime){
-			// false ¶ó¸é ¼Ò¼ö true¶ó¸é ¼Ò¼ö°¡¾Æ´Ô
+			// false ë¼ë©´ ì†Œìˆ˜ trueë¼ë©´ ì†Œìˆ˜ê°€ì•„ë‹˜
 			stringPrime += (i+",");
 			}
 		}
@@ -1475,7 +1476,7 @@ public class Prob01 {
 		Util util = new Util();
 
 		int primeCount = util.findPrimeCount(limit);
-		System.out.println("1~ "+limit+"±îÁöÀÇ ¼Ò¼öÀÇ °¹¼ö´Â "+primeCount +"EA ÀÌ¸ç ¼Ò¼ö´Â ¾Æ·¡¿Í °°´Ù");
+		System.out.println("1~ "+limit+"ê¹Œì§€ì˜ ì†Œìˆ˜ì˜ ê°¯ìˆ˜ëŠ” "+primeCount +"EA ì´ë©° ì†Œìˆ˜ëŠ” ì•„ë˜ì™€ ê°™ë‹¤");
 		System.out.println("//////////////////////////////////////////////");
 
 		int[] primeArray = util.findPrimeReturnArray(limit);
@@ -1490,14 +1491,14 @@ public class Prob01 {
 
 
 ## Prob01
-- ¼Ò¼ö°¹¼ö, ¼Ò¼ö Ã£±â
-- Array¿¬½À
+- ì†Œìˆ˜ê°¯ìˆ˜, ì†Œìˆ˜ ì°¾ê¸°
+- Arrayì—°ìŠµ
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155291799-adf43d9d-3ad9-45b1-a2ae-5f5da45170eb.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 class Util {
@@ -1513,16 +1514,16 @@ class Util {
 		String stringPrime = "";
 
 		for(int i=2; i<=limit; i++){
-		// ÃÊ±â°ª ÃÊ±âÈ­
+		// ì´ˆê¸°ê°’ ì´ˆê¸°í™”
 		prime = false;
 		for(int j=2; j<i; j++){
 			if(i%j ==0){
-				// iºÎÅÍ i-1±îÁöÀÇ ¸ğµç¼ö¸¦ ³ª´²¼­ ³ª¸ÓÁö°¡ 0 ÀÌÀÖ´Ù¸é ¼Ò¼ö°¡ ¾Æ´Ô
+				// ië¶€í„° i-1ê¹Œì§€ì˜ ëª¨ë“ ìˆ˜ë¥¼ ë‚˜ëˆ ì„œ ë‚˜ë¨¸ì§€ê°€ 0 ì´ìˆë‹¤ë©´ ì†Œìˆ˜ê°€ ì•„ë‹˜
 				prime = true;
 			}
 		}
 		if(!prime){
-			// false ¶ó¸é ¼Ò¼ö true¶ó¸é ¼Ò¼ö°¡¾Æ´Ô
+			// false ë¼ë©´ ì†Œìˆ˜ trueë¼ë©´ ì†Œìˆ˜ê°€ì•„ë‹˜
 			stringPrime += (i+",");
 			}
 		}
@@ -1544,7 +1545,7 @@ public class Prob01 {
 		Util util = new Util();
 
 		int primeCount = util.findPrimeCount(limit);
-		System.out.println("1~ "+limit+"±îÁöÀÇ ¼Ò¼öÀÇ °¹¼ö´Â "+primeCount +"EA ÀÌ¸ç ¼Ò¼ö´Â ¾Æ·¡¿Í °°´Ù");
+		System.out.println("1~ "+limit+"ê¹Œì§€ì˜ ì†Œìˆ˜ì˜ ê°¯ìˆ˜ëŠ” "+primeCount +"EA ì´ë©° ì†Œìˆ˜ëŠ” ì•„ë˜ì™€ ê°™ë‹¤");
 		System.out.println("//////////////////////////////////////////////");
 
 		int[] primeArray = util.findPrimeReturnArray(limit);
@@ -1559,13 +1560,13 @@ public class Prob01 {
 
 
 ## Prob02
-- API¿¬½À
+- APIì—°ìŠµ
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155292048-7c5b2574-45f4-4970-8a65-24e72a757262.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Prob02 {
@@ -1595,14 +1596,14 @@ public class Prob02 {
 
 
 ## StringUtil
-- API¿¬½À
-- ¹®ÀÚ¿­ ±æÀÌ, ÇÕ°è ¼ıÀÚµîµî ±¸ÇÏ±â
+- APIì—°ìŠµ
+- ë¬¸ìì—´ ê¸¸ì´, í•©ê³„ ìˆ«ìë“±ë“± êµ¬í•˜ê¸°
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155292259-7366ac59-757e-4590-838b-9b9b6aaf10cd.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class StringUtil {
@@ -1631,7 +1632,7 @@ public class StringUtil {
 	public static void main(String[] args) {
 		String[] arr = {"java program","array","java program area","append"};
 		String result = StringUtil.replaceString(arr);
-		System.out.println("º¯°æµÈ ¹®ÀÚ¿­ "+result);
+		System.out.println("ë³€ê²½ëœ ë¬¸ìì—´ "+result);
 	}
 }
 
@@ -1643,17 +1644,17 @@ public class StringUtil {
 
 
 
-# 02.25 °úÁ¦
+# 02.25 ê³¼ì œ
 
 ## Prob01
-- static¸Ş¼Òµå Á¢±Ù¹æ½Ä
+- staticë©”ì†Œë“œ ì ‘ê·¼ë°©ì‹
 
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155484106-530f8d38-013a-4a10-a4b4-57d3191addbf.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class Prob01 {
@@ -1670,7 +1671,7 @@ public class Prob01 {
 		return result;
 	}
 	public static void main(String[] args) {
-		System.out.println("¹®ÀÚ¿­¿¡ Æ¯Á¤¹®ÀÚ º¯°æÇÏ´Â Å×½ºÆ®");
+		System.out.println("ë¬¸ìì—´ì— íŠ¹ì •ë¬¸ì ë³€ê²½í•˜ëŠ” í…ŒìŠ¤íŠ¸");
 		System.out.println("-------Sample 1--------");
 		String str1 = myReplace("hello world",'l','*');
 		System.out.println(str1);
@@ -1688,14 +1689,14 @@ public class Prob01 {
 ```
 
 ## ArrayUtil
-- ¹è¿­ÀÌ º¯ÇüµÇ±â ¶§¹®(data type)
+- ë°°ì—´ì´ ë³€í˜•ë˜ê¸° ë•Œë¬¸(data type)
 - message return
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155484535-89175fe1-d363-4c37-b9b9-a3a92e8eca6d.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 public class ArrayUtil {
@@ -1733,14 +1734,14 @@ public class ArrayUtil {
 
 
 ## ArrayCopy
-- ¹è¿­ÀÌ º¯ÇüµÇ±â ¶§¹®(data type)
+- ë°°ì—´ì´ ë³€í˜•ë˜ê¸° ë•Œë¬¸(data type)
 - message return
 
-### °á°ú°ª
+### ê²°ê³¼ê°’
 
 <img src="https://user-images.githubusercontent.com/92348108/155500507-2770ca75-0aeb-464f-bff4-e8a49c98e5db.png" />
 
-### ÄÚµå
+### ì½”ë“œ
 
 ```
 package h0225;
@@ -1751,16 +1752,16 @@ public class ArrayCopy {
 	public Vector<String> moveToVector(String[] datas){
 		Vector<String> arr = new Vector<String>(datas.length,10);
 		
-		System.out.println("¸®ÅÏµÇ´Â Vector : ");
+		System.out.println("ë¦¬í„´ë˜ëŠ” Vector : ");
 		for(int i=0; i<datas.length; i++){	
 			arr.add(i,datas[datas.length-1-i]);
 			//System.out.print(arr.get(i));
 			
-			// " 5",.... ¸ğ¾çÀ» ¸¸µé°í ½Í´Ù¸é
-			// ºĞÇØÇØ¼­ ¹è¿­ ÀÎÀÚ°ªÀ» Ãâ·ÂÇÏ°í true, false·Î ½°Ç¥¸¦ Ãâ·ÂÇÏ¸éµÊ
+			// " 5",.... ëª¨ì–‘ì„ ë§Œë“¤ê³  ì‹¶ë‹¤ë©´
+			// ë¶„í•´í•´ì„œ ë°°ì—´ ì¸ìê°’ì„ ì¶œë ¥í•˜ê³  true, falseë¡œ ì‰¼í‘œë¥¼ ì¶œë ¥í•˜ë©´ë¨
 			System.out.print("\" "+arr.get(i)+"\""+((i == datas.length-1) ? "" :","));
 		}
-		System.out.println("ÀÇ ¼ø¼­·Î ÀúÀåµÈ Vector");
+		System.out.println("ì˜ ìˆœì„œë¡œ ì €ì¥ëœ Vector");
 		//System.out.println(arr.get(0));
 		
 		return arr;
