@@ -817,3 +817,41 @@ b1.equals(b2) ==> F
 - Exceoption과 같이 씀
 - exceoption을 예외상황 발생시 new로 새로 만들고 try catch를 사용 해서 만들어 놓은 exeoption에 접근하고
 	그것의 message를 retrun받아서 원하는 방식으로 대처하는 방법
+	
+## 예시
+
+```
+public void call(int time) throws IllegalArgumentException {
+		try {
+			if(time>0) {
+				if(battery<1) {
+					throw new IllegalArgumentException("잔여 배터리 없음");
+				}
+				battery -= time*0.5;		
+				if(battery<0) {	
+					battery =0;
+				}
+				System.out.println("통화 시간 : "+time);
+			} else {
+				throw new IllegalArgumentException("통화시간 입력 오류");
+			}
+		} catch(IllegalArgumentException e) {
+			
+			//e.printStackTrace();
+			if(e.getMessage().equals("잔여 배터리 없음")) {
+				System.out.println("잔여 배터리 없음 충전하세요");
+				return;
+			}
+			if(e.getMessage().equals("통화시간 입력 오류")) {
+				System.out.println("통화시간 입력 오류");
+				return;
+			}
+		}
+	}
+
+```
+
+- IllegalArgumentException으로 thorws 한다고 붙임
+- throw new 선언
+- message 날라갈것을 보냄
+- return 받아서 받은 return값 체크후에 원하는 것 
