@@ -797,3 +797,61 @@ b1.equals(b2) ==> F
 		<img src="https://user-images.githubusercontent.com/92348108/155113890-7f217106-fc61-4978-95d6-3778f61644dd.jpg" alt="" />
 	</div>
 </details>
+
+
+<hr />
+
+
+# [try catch(예외처리)](#에러종료(error))
+
+## try catch
+- runtime error를 잡는 방법
+- unchecked error 잡기 => checked error보다 안좋은 상황이 보일 상황이 많다
+- 때문에 잘 처리해야함
+
+## Exception
+- 여러가지 exception이 존재함
+- 원하는 것으로 확장하여 overroding도 가능함
+
+## throws
+- Exceoption과 같이 씀
+- exceoption을 예외상황 발생시 new로 새로 만들고 try catch를 사용 해서 만들어 놓은 exeoption에 접근하고
+	그것의 message를 retrun받아서 원하는 방식으로 대처하는 방법
+	
+## 예시
+
+```
+public void call(int time) throws IllegalArgumentException {
+		try {
+			if(time>0) {
+				if(battery<1) {
+					throw new IllegalArgumentException("잔여 배터리 없음");
+				}
+				battery -= time*0.5;		
+				if(battery<0) {	
+					battery =0;
+				}
+				System.out.println("통화 시간 : "+time);
+			} else {
+				throw new IllegalArgumentException("통화시간 입력 오류");
+			}
+		} catch(IllegalArgumentException e) {
+			
+			//e.printStackTrace();
+			if(e.getMessage().equals("잔여 배터리 없음")) {
+				System.out.println("잔여 배터리 없음 충전하세요");
+				return;
+			}
+			if(e.getMessage().equals("통화시간 입력 오류")) {
+				System.out.println("통화시간 입력 오류");
+				return;
+			}
+		}
+	}
+
+```
+
+- IllegalArgumentException으로 thorws 한다고 붙임
+- throw new 선언
+- message 날라갈것을 보냄
+- return 받아서 받은 return값 체크후에 원하는 것 
