@@ -88,3 +88,5 @@ FROM emp_test
 WHERE dept_name IS NOT NULL
 GROUP BY dept_name
 ORDER BY dept_name;
+
+1

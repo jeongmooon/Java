@@ -138,3 +138,6 @@ SELECT * FROM emp_test;
 ROLLBACK;
 
 SELECT * FROM emp_test;
+
+
+11
