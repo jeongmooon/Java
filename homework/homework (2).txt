@@ -1,0 +1,548 @@
+to_char(avg(NVL(salary,0)),'L999,999')평균월급
+where in_date between '2001-01-01' and '2001-12-31';
+SELECT department_id, RANK()OVER(ORDER BY salary desc) rankking, salary
+FROM employees;
+TO_CHAR(TO_DATE('2077-07-03','YYYY-MM-DD'), 'YEAR') 
+
+
+1.
+//답
+SELECT a.employee_id 사번, a.department_id 부서번호, a.salary 연봉, ROUND(부서평균연봉,0) 부서평균연봉
+FROM employees a, (select department_id, avg(salary) 부서평균연봉 from employees GROUP BY department_id) b
+WHERE a.salary >부서평균연봉 and a.department_id=b.department_id(+)
+ORDER BY 부서평균연봉 desc;
+
+SELECT
+a.employee_id, a.department_id, a.salary, ROUND(b.avgsal,0)
+FROM employees a, (SELECT
+department_id, AVG(salary)avgsal
+FROM employees
+GROUP BY department_id) b
+WHERE a.department_id=b.department_id(+) AND a.salary>b.avgsal
+ORDER BY b.avgsal DESC;
+
+
+2.
+//답
+employees 테이블 급여 많이 받는순
+SELECT rankking,last_name, first_name, salary FROM(
+SELECT
+RANK()OVER(ORDER BY salary DESC) rankking,last_name, first_name, salary,ROW_NUMBER()OVER(ORDER BY salary DESC)"rownum"
+FROM employees) a
+WHERE a."rownum" > 5 AND a."rownum"<11;
+
+3.
+//답
+SELECT TO_CHAR(a.hire_date,'yyyy') 년도, to_char(AVG(salary),'999,999') 평균급여
+FROM employees a, jobs b
+WHERE a.job_id = b.job_id AND b.job_title='Sales Manager'
+GROUP BY TO_CHAR(a.hire_date,'yyyy')
+ORDER BY TO_CHAR(a.hire_date,'yyyy');
+
+4.
+//답
+SELECT a.Last_name 사원이름, NVL(b.Last_name,'<없음>') 매니저이름, c.department_name 부서이름
+FROM employees a, employees b, (SELECT department_id, b.city, department_name
+FROM departments a, locations b
+WHERE a.location_id = b.location_id(+) AND LOWER(b.city)=LOWER('Seattle')) c
+WHERE a.manager_id = b.employee_id(+) AND a.department_id = c.department_id
+GROUP BY a.Last_name, b.Last_name, a.department_id, c.department_name;
+
+
+
+SELECT *
+FROM locations
+WHERE city ='Seattle';
+
+SELECT *
+FROM departments
+WHERE location_id = '1700';
+
+SELECT department_id, b.city
+FROM departments a, locations b
+WHERE a.location_id = b.location_id AND b.city='Seattle';
+
+
+SELECT Last_name, manager_id
+FROM employees a, employees b
+
+5.
+//답
+SELECT a.last_name 사원이름, b.부서이름,b.급여
+FROM employees a,(
+SELECT a.department_id,b.department_name 부서이름, MIN(salary) 급여
+FROM employees a, departments b
+WHERE a.department_id = b.department_id AND a.salary IN (SELECT MIN(salary)
+FROM employees
+GROUP BY department_id)
+GROUP BY department_name,a.department_id) b
+WHERE a.department_id = b.department_id AND salary = b.급여
+ORDER BY b.부서이름, a.last_name;
+
+
+SELECT a.department_id,b.department_name 부서이름, MIN(salary) 급여
+FROM employees a, departments b
+WHERE a.department_id = b.department_id AND a.salary IN (SELECT MIN(salary)
+FROM employees
+GROUP BY department_id)
+GROUP BY department_name,a.department_id)
+
+
+
+
+SELECT department_id,MIN(salary)
+FROM employees
+GROUP BY department_id;
+
+
+SELECT a.department_id,b.department_name 부서명, MIN(salary) 급여
+FROM employees a, departments b
+WHERE a.department_id = b.department_id AND a.salary IN (SELECT MIN(salary)
+FROM employees
+GROUP BY department_id)
+GROUP BY department_name,a.department_id;
+
+6.
+//답
+SELECT city 도시이름, ROUND(AVG(salary)) 평균급여, COUNT(employee_id) 직원수
+FROM employees a, departments b, locations c
+WHERE a.department_id=b.department_id AND b.location_id=c.location_id
+GROUP BY c.city
+HAVING COUNT(employee_id)<10
+ORDER BY 평균급여;
+
+
+SELECT location_id,city
+FROM locations;
+
+
+7.
+//답
+SELECT job_title 직책, AVG(salary) 평균급여
+FROM jobs a, employees b
+WHERE a.job_id = b.job_id AND b.department_id =(SELECT department_id
+FROM departments
+WHERE department_id=30)
+GROUP BY job_title
+HAVING AVG(salary) >=2000;
+
+
+SELECT a.department_id, salary
+FROM departments a, employees b
+WHERE a.department_id=30 AND a.department_id(+)=b.department_id AND salary>=3000;
+
+
+8.
+//답
+SELECT a.employee_id 사번, (c.first_name||' '||c.last_name) 이름
+FROM job_history a, jobs b, employees c
+WHERE a.employee_id=c.employee_id and a.job_id = b.job_id AND LOWER(b.job_title) LIKE LOWER('public Accountant');
+
+
+where in_date between '2001-01-01' and '2001-12-31';
+2-1
+//답
+SELECT a.employee_id,a.first_name,a.last_name,nvl(b.department_name,'<NOT-ASSIGNED>')department_name
+FROM employees a, departments b
+WHERE a.department_id = b.department_id(+) AND a.hire_date BETWEEN '1999-01-01' AND '1999-12-31';
+
+
+2-2
+//답
+SELECT *
+FROM employees
+WHERE job_id IN (SELECT job_id
+FROM jobs
+WHERE LOWER(job_title) like LOWER('Marketing%'));
+
+//job_id, job_title
+SELECT job_id,job_title
+FROM jobs
+WHERE job_title like 'Marketing%';
+
+
+2-3
+//답
+SELECT b.job_title ,AVG(a.salary)
+FROM employees a, jobs b
+WHERE a.job_id = b.job_id(+) AND salary >= 10000
+GROUP BY job_title
+ORDER BY AVG(a.salary) desc;
+
+
+
+SELECT b.job_title ,AVG(a.salary)
+FROM employees a, jobs b
+WHERE a.job_id = b.job_id AND salary IS NOT null
+GROUP BY job_title;
+
+
+3-1
+//답
+SELECT a.last_name, a.salary
+FROM employees a,(SELECT employee_id, salary
+FROM employees)b
+WHERE a.manager_id = b.employee_id AND a.salary> b.salary
+
+
+
+SELECT a.last_name, a.salary
+FROM employees a, employees b
+WHERE a.employee_id = b.employee_id AND a.manager_id = b.employee_id;
+
+SELECT employee_id, salary
+FROM employees;
+
+SELECT manager_id, salary
+FROM employees;
+
+SELECT a.last_name, a.salary
+FROM employees a,(SELECT employee_id, salary
+FROM employees)b
+WHERE a.manager_id = b.employee_id AND a.salary> b.salary
+
+
+3-2
+//답
+SELECT first_name, last_name, salary
+FROM employees
+WHERE job_id = (SELECT job_id
+FROM jobs
+WHERE job_title ='Sales Representative') AND salary BETWEEN 9000 AND 10000;
+
+
+//'Sales Representative'인 job_id
+SELECT job_id
+FROM jobs
+WHERE job_title ='Sales Representative';
+
+SELECT first_name, last_name, salary
+FROM employees
+WHERE job_id = (SELECT job_id
+FROM jobs
+WHERE job_title ='Sales Representative') AND salary BETWEEN 9000 AND 10000;
+
+
+3-3
+//답
+SELECT employee_id, first_name, salary
+FROM employees
+WHERE salary >= 4000 AND (LOWER(first_name) like LOWER('%Al%');
+
+4-1
+//답
+SELECT job_title, SUM(salary)
+FROM employees a, jobs b
+WHERE a.job_id=b.job_id
+GROUP BY job_title
+HAVING SUM(salary) >30000
+ORDER BY SUM(salary) DESC;
+
+
+4-2
+//답
+SELECT employee_id, first_name, job_title, department_name
+FROM employees a, departments b, jobs c, locations d
+WHERE a.department_id=b.department_id AND a.job_id=c.job_id AND b.location_id=d.location_id AND d.city='Seattle';
+
+
+4-3
+SELECT employee_id, first_name, salary
+FROM employees a, jobs b
+WHERE a.job_id=b.job_id AND (LOWER(b.job_title) LIKE LOWER('Accountant') OR LOWER(b.job_title) LIKE LOWER('Stock Clerk'));
+
+
+5-1
+SELECT department_name NAME, MIN(salary) MINSAL, MAX(salary) MAXSAL, AVG(salary) AVGSAL
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY department_name;
+
+
+5-2
+SELECT a.employee_id,a.department_id,a.salary, AVGSAL
+FROM employees a, (SELECT department_name NAME, MIN(salary) MINSAL, MAX(salary) MAXSAL, AVG(salary) AVGSAL
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY department_name)b, departments c
+WHERE a.department_id=c.department_id AND c.department_name=NAME AND a.salary>AVGSAL
+ORDER BY a.employee_id;
+
+
+5-3
+SELECT a.employee_id,a.department_id,a.salary, AVGSAL
+FROM employees a, (SELECT department_name NAME, MIN(salary) MINSAL, MAX(salary) MAXSAL, AVG(salary) AVGSAL
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY department_name)b, departments c
+WHERE a.department_id=c.department_id AND c.department_name=NAME AND a.department_id=30
+ORDER BY a.employee_id;
+
+//
+SELECT a.employee_id,a.department_id,a.salary, AVGSAL
+FROM employees a, (SELECT department_name NAME, MIN(salary) MINSAL, MAX(salary) MAXSAL, AVG(salary) AVGSAL
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY department_name)b, departments c
+WHERE a.department_id=c.department_id AND c.department_name=NAME AND a.department_id=(변수값)
+ORDER BY a.employee_id;
+
+
+6-1
+SELECT a.first_name, a.hire_date, b.employee_id, b.first_name
+FROM employees a, (SELECT employee_id, first_name
+FROM employees) b
+WHERE a.manager_id=b.employee_id(+) AND hire_date BETWEEN '1980-01-01' AND '1989-12-31';
+
+
+//manager table
+SELECT employee_id, first_name
+FROM employees;
+
+
+6-2
+SELECT a.first_name, a.salary, b.department_name
+FROM employees a, (
+SELECT department_name, department_id
+FROM departments
+WHERE department_name='Sales') b
+WHERE a.department_id=b.department_id AND a.salary <(SELECT AVG(salary)
+FROM employees
+WHERE department_id=100);
+
+
+SELECT AVG(salary)
+FROM employees
+WHERE department_id=100;
+
+
+6-3
+//답
+SELECT last_name, department_name
+FROM employees a, departments b, locations c
+WHERE a.department_id=b.department_id AND b.location_id=c.location_id
+AND salary BETWEEN 7000 AND 10000 AND LOWER(c.city) LIKE LOWER('South San Francisco');
+
+
+SELECT city, MIN(salary), MAX(salary)
+
+
+SELECT first_name, department_name
+FROM employees a, departments b
+WHERE a.department_id=b.department_id;
+
+
+
+7-1
+//답
+SELECT (to_char(hire_date,'MM')||'월')월, COUNT(employee_id)직원수
+FROM employees
+GROUP BY to_char(hire_date,'MM')
+ORDER BY to_char(hire_date,'MM');
+
+
+7-2
+//답
+SELECT b.department_name, a.first_name, a.salary
+FROM employees a, departments b, (SELECT MAX(salary) maxsal, department_id
+FROM employees
+GROUP BY department_id) c
+WHERE a.department_id=b.department_id AND a.department_id = c.department_id AND a.salary = c.maxsal;
+
+
+SELECT MAX(salary), department_id
+FROM employees
+GROUP BY department_id;
+
+
+7-3
+//답
+SELECT  b.department_name, MAX(salary) maxsal,MIN(salary) minsal
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY b.department_name
+HAVING AVG(salary) > (
+SELECT AVG(salary)
+FROM employees a, departments b
+WHERE a.department_id=b.department_id AND department_name='IT')
+AND AVG(salary) <(
+SELECT AVG(salary)
+FROM employees a, departments b
+WHERE a.department_id=b.department_id AND department_name='Sales');
+
+
+
+
+SELECT  b.department_name, MAX(salary) maxsal,MIN(salary) minsal
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY b.department_name;
+
+
+SELECT department_name ,AVG(salary)
+FROM employees a, departments b
+WHERE a.department_id=b.department_id AND (department_name ='Sales' OR department_name='IT')
+GROUP BY department_name;
+
+
+SELECT department_name ,AVG(salary)
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY department_name;
+
+
+SELECT AVG(salary)
+FROM employees a, departments b
+WHERE a.department_id=b.department_id AND department_name='IT';
+GROUP BY department_name;
+
+
+
+7-4
+//답
+SELECT NVL(b.department_name,'<신생부서>') 부서명,COUNT(employee_id)직원수
+FROM employees a, departments b
+WHERE a.department_id=b.department_id(+)
+GROUP BY b.department_name
+HAVING COUNT(employee_id)=1
+ORDER BY b.department_name;
+
+
+SELECT b.department_name 부서명,REPLACE(to_char(COUNT(a.department_id)),0,'<신생부서>') 직원수
+FROM employees a, departments b
+WHERE a.department_id(+)=b.department_id 
+GROUP BY b.department_name
+
+
+
+
+7-5
+//답
+SELECT department_name, to_char(hire_date,'MM')입사월, COUNT(a.department_id)직원수
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY b.department_name,to_char(hire_date,'MM')
+HAVING COUNT(a.department_id) >=5
+ORDER by department_name;
+
+
+7-6
+//답
+SELECT NVL(d.country_name,'<부서없음>'), NVL(c.city,'<부서없음>'), COUNT(a.employee_id)
+FROM employees a, departments b, locations c, countries d
+WHERE a.department_id=b.department_id(+) AND b.location_id=c.location_id(+) AND c.country_id=d.country_id(+)
+GROUP BY d.country_name, c.city;
+
+SELECT *
+FROM employees;
+
+
+7-7
+//답
+SELECT employee_id, first_name, salary, b.avgsal
+FROM employees a, (SELECT a.department_id, ROUND(AVG(salary),2) avgsal,MAX(salary) maxsal
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY a.department_id) b
+WHERE a.department_id = b.department_id AND a.salary=b.maxsal;
+
+
+SELECT a.department_id, AVG(salary) avgsal,MAX(salary) maxsal
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY a.department_id;
+
+
+7-8
+//답
+1)
+CREATE TABLE SALGRADE(
+	grade number(2) CONSTRAINT salgrade_grade_pk PRIMARY key,
+	losal number(5) CONSTRAINT slagrade_losal_nn NOT NULL,
+	hisal number(5) CONSTRAINT slagrade_hisal_nn NOT NULL
+);
+
+INSERT INTO salgrade VALUES (1,1000,5000);
+INSERT INTO salgrade VALUES (2,5001,10000);
+INSERT INTO salgrade VALUES (3,10001,20000);
+INSERT INTO salgrade VALUES (4,20001,30000);
+
+2)
+SELECT (grade||'등급')급여등급, COUNT(employee_id)직원수
+FROM employees a, salgrade
+WHERE salary BETWEEN losal AND hisal
+GROUP BY grade
+ORDER BY grade;
+
+
+7-9
+SELECT NVL(to_char(TRUNC(commission_pct,1)),'<커미션 없음>'), COUNT(employee_id)
+FROM employees
+GROUP BY TRUNC(commission_pct,1);
+
+
+SELECT NVL(to_char(ROUND(commission_pct,1)),'<커미션 없음>'), COUNT(employee_id)
+FROM employees
+GROUP BY ROUND(commission_pct,1);
+
+
+7-10
+SELECT department_name, first_name, salary,"커미션"
+FROM employees a, departments b, (
+SELECT commission_pct"커미션", employee_id, ROW_NUMBER()OVER(ORDER BY commission_pct DESC)"rownum"
+FROM employees
+WHERE commission_pct IS NOT null
+ORDER BY "커미션" DESC, salary desc) c
+WHERE a.department_id=b.department_id AND a.employee_id = c.employee_id AND c."rownum"<5;
+
+// 커미션
+SELECT commission_pct"커미션", employee_id, ROW_NUMBER()OVER(ORDER BY commission_pct DESC)"rownum"
+FROM employees
+WHERE commission_pct IS NOT null
+ORDER BY "커미션" DESC, salary desc;
+
+
+7-11
+SELECT c.city, b.department_name, a.first_name, a.salary
+FROM employees a, departments b, locations c
+WHERE a.department_id=b.department_id(+) AND b.location_id=c.location_id(+) AND LOWER(b.department_name) LIKE LOWER('%resources%') AND LOWER(c.city) LIKE LOWER('%lon%');
+
+
+
+
+
+SELECT c.city, b.department_name, a.first_name, a.salary
+FROM employees a, departments b, locations c
+WHERE a.department_id=b.department_id(+) AND b.location_id=c.location_id(+) AND LOWER(b.department_name) LIKE LOWER('%it%') AND LOWER(c.city) LIKE LOWER('%south%');
+
+SELECT first_name, salary
+FROM employees
+WHERE first_name='Bruce';
+
+SELECT c.city, b.department_name, a.first_name, a.salary
+FROM employees a, departments b, locations c
+WHERE a.department_id=b.department_id(+) AND b.location_id=c.location_id(+) AND LOWER(b.department_name) LIKE LOWER('%it%') AND LOWER(c.city) LIKE LOWER('%south%');
+
+
+SELECT c.city, b.department_name, a.first_name, a.salary
+FROM employees a, departments b, locations c
+WHERE a.department_id=b.department_id(+) AND b.location_id=c.location_id(+) AND LOWER(b.department_name) LIKE LOWER('%resources%') AND LOWER(c.city) LIKE LOWER('%lon%');
+
+
+
+
+
+SELECT
+a.employee_id, a.department_id, a.salary, ROUND(b.avgsal,0)
+FROM employees a, (SELECT
+department_id, AVG(salary)avgsal
+FROM employees
+GROUP BY department_id) b
+WHERE a.department_id=b.department_id(+) AND a.salary>b.avgsal
+ORDER BY b.avgsal DESC;
+
+SELECT
+department_id, AVG(salary)
+FROM employees
+GROUP BY department_id;
+
