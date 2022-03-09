@@ -855,3 +855,19 @@ public void call(int time) throws IllegalArgumentException {
 - throw new 선언
 - message 날라갈것을 보냄
 - return 받아서 받은 return값 체크후에 원하는 것 
+
+
+
+<hr />
+
+# JDBMS
+
+
+
+# REST API
+
+## GET
+
+## POST
+
+## READ
