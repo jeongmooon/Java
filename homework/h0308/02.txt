@@ -1,0 +1,12 @@
+1.
+SELECT a.employee_id,a.first_name,a.last_name,nvl(b.department_name,'<NOT-ASSIGNED>')department_name
+FROM employees a, departments b
+WHERE a.department_id = b.department_id(+) AND a.hire_date BETWEEN '1999-01-01' AND '1999-12-31';
+
+
+2.
+SELECT *
+FROM employees
+WHERE job_id IN (SELECT job_id
+FROM jobs
+WHERE LOWER(job_title) like LOWER('Marketing%'));

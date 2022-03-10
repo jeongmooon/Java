@@ -1,0 +1,69 @@
+1.
+SELECT a.employee_id 사번, a.department_id 부서번호, a.salary 연봉, ROUND(부서평균연봉,0) 부서평균연봉
+FROM employees a, (select department_id, avg(salary) 부서평균연봉 from employees GROUP BY department_id) b
+WHERE a.salary >부서평균연봉 and a.department_id=b.department_id(+)
+ORDER BY 부서평균연봉 desc;
+
+2.
+employees 테이블 급여 많이 받는순
+SELECT rankking,last_name, first_name, salary FROM(
+SELECT
+RANK()OVER(ORDER BY salary DESC) rankking,last_name, first_name, salary,ROW_NUMBER()OVER(ORDER BY salary DESC)"rownum"
+FROM employees) a
+WHERE a."rownum" > 5 AND a."rownum"<11;
+
+3.
+SELECT TO_CHAR(a.hire_date,'yyyy') 년도, to_char(AVG(salary),'999,999') 평균급여
+FROM employees a, jobs b
+WHERE a.job_id = b.job_id AND b.job_title='Sales Manager'
+GROUP BY TO_CHAR(a.hire_date,'yyyy')
+ORDER BY TO_CHAR(a.hire_date,'yyyy');
+
+4.
+SELECT a.Last_name 사원이름, NVL(b.Last_name,'<없음>') 매니저이름, c.department_name 부서이름
+FROM employees a, employees b, (SELECT department_id, b.city, department_name
+FROM departments a, locations b
+WHERE a.location_id = b.location_id(+) AND LOWER(b.city)=LOWER('Seattle')) c
+WHERE a.manager_id = b.employee_id(+) AND a.department_id = c.department_id
+GROUP BY a.Last_name, b.Last_name, a.department_id, c.department_name
+ORDER BY a.last_name;
+
+
+5.
+SELECT a.last_name 사원이름, b.부서이름,b.급여
+FROM employees a,(
+SELECT a.department_id,b.department_name 부서이름, MIN(salary) 급여
+FROM employees a, departments b
+WHERE a.department_id = b.department_id AND a.salary IN (SELECT MIN(salary)
+FROM employees
+GROUP BY department_id)
+GROUP BY department_name,a.department_id) b
+WHERE a.department_id = b.department_id AND salary = b.급여
+ORDER BY b.부서이름, a.last_name;
+
+
+6.
+SELECT city 도시이름, ROUND(AVG(salary)) 평균급여, COUNT(employee_id) 직원수
+FROM employees a, departments b, locations c
+WHERE a.department_id=b.department_id AND b.location_id=c.location_id
+GROUP BY c.city
+HAVING COUNT(employee_id)<10
+ORDER BY 평균급여;
+
+
+7.
+SELECT job_title 직책, to_char(AVG(salary),'999,999') 평균급여
+FROM jobs a, employees b
+WHERE a.job_id = b.job_id AND b.department_id =(SELECT department_id
+FROM departments
+WHERE department_id=30)
+GROUP BY job_title
+HAVING AVG(salary) >=2000;
+
+
+8.
+SELECT a.employee_id 사번, (c.first_name||' '||c.last_name) 이름
+FROM job_history a, jobs b, employees c
+WHERE a.employee_id=c.employee_id and a.job_id = b.job_id AND LOWER(b.job_title) LIKE LOWER('public Accountant');
+
+

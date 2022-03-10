@@ -1,0 +1,102 @@
+1.
+SELECT (to_char(hire_date,'MM')||'월')월, COUNT(employee_id)직원수
+FROM employees
+GROUP BY to_char(hire_date,'MM')
+ORDER BY to_char(hire_date,'MM');
+
+
+2.
+SELECT b.department_name, a.first_name, a.salary
+FROM employees a, departments b, (SELECT MAX(salary) maxsal, department_id
+FROM employees
+GROUP BY department_id) c
+WHERE a.department_id=b.department_id AND a.department_id = c.department_id AND a.salary = c.maxsal;
+
+
+3.
+SELECT  b.department_name 부서명, MAX(salary) 최대급여,MIN(salary) 최소급여, AVG(salary) 평균급여
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY b.department_name
+HAVING AVG(salary) > (
+SELECT AVG(salary)
+FROM employees a, departments b
+WHERE a.department_id=b.department_id AND department_name='IT')
+AND AVG(salary) <(
+SELECT AVG(salary)
+FROM employees a, departments b
+WHERE a.department_id=b.department_id AND department_name='Sales');
+
+
+4.
+SELECT NVL(b.department_name,'<신생부서>') 부서명,COUNT(employee_id)직원수
+FROM employees a, departments b
+WHERE a.department_id=b.department_id(+)
+GROUP BY b.department_name
+HAVING COUNT(employee_id)=1
+ORDER BY b.department_name;
+
+
+5.
+SELECT department_name 부서명, to_char(hire_date,'MM')입사월, COUNT(a.department_id)직원수
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY b.department_name,to_char(hire_date,'MM')
+HAVING COUNT(a.department_id) >=5
+ORDER by department_name;
+
+
+6.
+SELECT NVL(d.country_name,'<부서없음>')국가명, NVL(c.city,'<부서없음>')도시명, COUNT(a.employee_id)직원수
+FROM employees a, departments b, locations c, countries d
+WHERE a.department_id=b.department_id(+) AND b.location_id=c.location_id(+) AND c.country_id=d.country_id(+)
+GROUP BY d.country_name, c.city
+ORDER BY 국가명;
+
+
+7.
+SELECT employee_id 직원아이디, first_name 이름, salary 급여, b.avgsal 부서평균
+FROM employees a, (SELECT a.department_id, ROUND(AVG(salary),2) avgsal,MAX(salary) maxsal
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY a.department_id) b
+WHERE a.department_id = b.department_id AND a.salary=b.maxsal;
+
+
+8.
+1)
+CREATE TABLE SALGRADE(
+	grade number(2) CONSTRAINT salgrade_grade_pk PRIMARY key,
+	losal number(5) CONSTRAINT slagrade_losal_nn NOT NULL,
+	hisal number(5) CONSTRAINT slagrade_hisal_nn NOT NULL
+);
+
+INSERT INTO salgrade VALUES (1,1000,5000);
+INSERT INTO salgrade VALUES (2,5001,10000);
+INSERT INTO salgrade VALUES (3,10001,20000);
+INSERT INTO salgrade VALUES (4,20001,30000);
+
+2)
+SELECT (grade||'등급')급여등급, COUNT(employee_id)직원수
+FROM employees a, salgrade
+WHERE salary BETWEEN losal AND hisal
+GROUP BY grade
+ORDER BY grade;
+
+
+9.
+SELECT NVL(to_char(TRUNC(commission_pct,1)),'<커미션 없음>')커미션, COUNT(employee_id)직원수
+FROM employees
+GROUP BY TRUNC(commission_pct,1);
+
+
+10.
+SELECT department_name 부서명, first_name 직원명, salary 급여,"커미션"
+FROM employees a, departments b, (
+SELECT commission_pct"커미션", employee_id, ROW_NUMBER()OVER(ORDER BY commission_pct DESC)"rownum"
+FROM employees
+WHERE commission_pct IS NOT null
+ORDER BY "커미션" DESC, salary desc) c
+WHERE a.department_id=b.department_id AND a.employee_id = c.employee_id AND c."rownum"<5;
+
+

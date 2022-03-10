@@ -20,7 +20,7 @@ public class EmpStatistics {
 		System.out.println("=======================================");
 		System.out.println("Max Salary : "+maxSalary);
 		System.out.println("=======================================");
-		
+				
 		String url = "jdbc:oracle:thin:@localhost:1521:XE";
 		String user ="hr";
 		String pwd = "hr";

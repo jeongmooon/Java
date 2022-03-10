@@ -1,0 +1,14 @@
+01.
+SELECT job_title, SUM(salary)
+FROM employees a, jobs b
+WHERE a.job_id=b.job_id
+GROUP BY job_title
+HAVING SUM(salary) >30000
+ORDER BY SUM(salary) DESC;
+
+
+02.
+SELECT employee_id, first_name, job_title, department_name
+FROM employees a, departments b, jobs c, locations d
+WHERE a.department_id=b.department_id AND a.job_id=c.job_id AND b.location_id=d.location_id AND d.city='Seattle';
+

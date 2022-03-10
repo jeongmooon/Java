@@ -16,7 +16,7 @@ public class EmpManager {
 	
 	public void printEmployee(String jobs[]) throws SQLException {
 		String url = "jdbc:oracle:thin:@localhost:1521:XE";
-		Connection con = DriverManager.getConnection(url,"hr","hr");		
+		Connection con = DriverManager.getConnection(url,"hr","hr");
 		
 		String query ="SELECT employee_id, first_name, salary\r\n"
 				+ "FROM employees a, jobs b\r\n"
@@ -40,5 +40,4 @@ public class EmpManager {
 		new EmpManager().printEmployee(jobs);		
 
 	}
-
 }

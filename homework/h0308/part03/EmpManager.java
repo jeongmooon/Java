@@ -21,7 +21,7 @@ public class EmpManager {
 		String query ="SELECT employee_id, first_name, salary\r\n"
 				+ "FROM employees\r\n"
 				+ "WHERE salary >= "+salary+" AND LOWER(first_name) like LOWER('%"+name+"%')";
-
+		
 		ResultSet rs = con.createStatement().executeQuery(query); 
 
 		while(rs.next()){

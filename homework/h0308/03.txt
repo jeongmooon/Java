@@ -1,0 +1,13 @@
+1.
+SELECT a.last_name, a.salary
+FROM employees a,(SELECT employee_id, salary
+FROM employees)b
+WHERE a.manager_id = b.employee_id AND a.salary> b.salary;
+
+
+2.
+SELECT first_name, last_name, salary
+FROM employees
+WHERE job_id = (SELECT job_id
+FROM jobs
+WHERE job_title ='Sales Representative') AND salary BETWEEN 9000 AND 10000;

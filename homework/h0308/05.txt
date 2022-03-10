@@ -1,0 +1,16 @@
+1.
+SELECT department_name NAME, MIN(salary) MINSAL, MAX(salary) MAXSAL, AVG(salary) AVGSAL
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY department_name
+ORDER BY department_name;
+
+2.
+SELECT a.employee_id,a.department_id,a.salary, ROUND(AVGSAL,0)AVG_SALARY
+FROM employees a, (SELECT department_name NAME, MIN(salary) MINSAL, MAX(salary) MAXSAL, AVG(salary) AVGSAL
+FROM employees a, departments b
+WHERE a.department_id=b.department_id
+GROUP BY department_name)b, departments c
+WHERE a.department_id=c.department_id AND c.department_name=NAME AND a.salary>AVGSAL
+ORDER BY a.employee_id;
+
