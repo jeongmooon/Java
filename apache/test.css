@@ -1,0 +1,36 @@
+.membertitle{
+    display: flex;
+    padding: 8px, 12px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #9DEB92;
+}
+
+.tablesheet{
+    width: 100%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+.tablesheet th,td{
+    border-bottom: 1px solid #444444;
+    border-left: 1px solid #444444;
+    padding: 10px;
+}
+
+.title{
+    background-color:#9DEB92;
+}
+
+.text_select{
+    width: 150px;
+    height: 25px;
+}
+
+.member__table{
+    text-align: left;
+}
+
+.table__number{
+    width: 40px;
+}
