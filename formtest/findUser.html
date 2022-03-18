@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./appendFormTest/test.css" />
+    <script src="./appendFormTest/testOption.js" defer></script>
+    <link rel="stylesheet" href="./appendFormTest/findUser.css" />
+    <title>MemberSheet</title>
+</head>
+<body>
+	<!-- 기타 내용 시작부분(css하기 쉽게 블럭지정용) -->
+    <div class="membertitle">
+        <h2>개인정보</h2>
+        <p>도움말</p>
+    </div>
+    <br />
+    <!-- 기타 내용 종료부분(css하기 쉽게 블럭지정용) -->    
+    
+    <!-- 큰 테이블 시작부분(css하기 쉽게 블럭지정용) -->
+    <div class="member__table">
+    	<!-- form태그 시작 -->
+        <form method="Get" action="http://192.168.0.34:8080/Homework01/FindUser">
+        
+        	<!-- table블럭 세팅 부분 시작 -->
+            <table class="tablesheet">
+                <td class="title">아이디</td>
+                <tr>
+                    <td colspan="3">
+                        <div class="idInput"><input type="text"  name="id" id="id" /></div>
+                    </td>
+                </tr>
+            </table>
+            <!-- table블럭 세팅 부분 종료 -->
+			
+			<!-- button블럭 세팅 부분 시작 -->
+            <div class="btnSet">
+            	<div>
+            		<button class="setButton" type="button" value="뒤로"><a href='Homework01'>뒤로</a></button>
+            	</div>
+            	<div>
+	            	<button class="setButton" type="submit" value="전송">전송</button>
+	            	<button class="setButton" type="reset" value="취소">취소</button>
+            	</div>
+            </div>
+            <!-- button블럭 세팅 부분 종료 -->
+        </form>
+        <!-- form태그 종료 -->
+    </div>
+    <!-- 큰 테이블 종료부분(css하기 쉽게 블럭지정용) -->
+</body>
+</html>
+
+
