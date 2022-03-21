@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="EUC-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./appendFormTest/addUser.css" />
+    <script src="./appendFormTest/testOption.js" defer></script>
+    <title>MemberSheet</title>
+</head>
+<body>
+	<!-- 기타 내용 시작부분(css하기 쉽게 블럭지정용) -->
+    <div class="membertitle">
+        <h2>개인정보</h2>
+        <p>도움말</p>
+    </div>
+    <br />
+    <!-- 기타 내용 종료부분(css하기 쉽게 블럭지정용) -->    
+    
+    <!-- 큰 테이블 시작부분(css하기 쉽게 블럭지정용) -->
+    <div class="member__table">
+    	<!-- form태그 시작 -->
+        <form method="Post" action="addUser.jsp">
+        
+        	<!-- table블럭 세팅 부분 시작 -->
+            <table class="tablesheet">
+            	<tr>
+                    <td class="title">아이디</td>
+                    <td colspan="3"><input type="text"  name="id" /></td>
+                </tr>
+                <tr>
+                    <td class="title">비밀번호</td>
+                    <td colspan="3"><input type="text"  name="passwd" /></td>
+                </tr>
+                <tr>
+                    <td class="title">이름(한글실명)</td>
+                    <td colspan="3"><input type="text"  name="name" /></td>
+                </tr>
+
+                <tr>
+                    <td class="title">성별</td>
+                    <td colspan="3">남자 :<input type="radio" class="gender" checked="true" name="gender" value="male" /> 
+                        여자 :<input type="radio" class="gender" name="gender" value="female" /></td>
+                </tr>
+                <tr>
+                    <td class="title">생년월일</td>
+                    <td colspan="3">
+                    	<select id="select_year" onchange="lastday();" name="cal"></select>년
+                        <select id="select_month" onchange="lastday();" name="cal"></select>월
+                        <select id="select_day" name="cal"></select>일
+                        <input type="radio" checked="true" name="luCal" value="양력" />양력 
+                        <input type="radio" name="luCal" value="음력" />음력 (<input type="radio" name="luCal" />윤달)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">최종학력</td>
+                    <td colspan="3">
+                        <select class="text_select" id="education" name="education"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">직업</td>
+                    <td>
+                        <select class="text_select" name="jobs" id="jobs">
+                        </select>
+                    </td>
+                    <td class="title">소속</td>
+                    <td><input type="text"/></td>
+                </tr>
+                <tr>
+                    <td class="title">결혼여부</td>
+                    <td>
+                    	<input type="radio" name="merry" checked="true" value="single" />미혼 
+                    	<input name="merry" type="radio" value="merry" />기혼
+                    </td>
+                    <td class="title">자녀수</td>
+                    <td>
+                        <select id="childnum" name="childnum"></select>
+                        명
+                    </td>
+                </tr>
+                <tr>
+                    <th rowspan="3" class="title">연락처</th>            
+                    <td colspan="3">전화번호 
+                        <input type="text" class="table__number" />-<input type="text" class="table__number" />-<input type="text" class="table__number" /> 
+                        <input type="radio" checked="true" name="contactnum" value="집" />집 
+                        <input type="radio" name="contactnum" value="직장" />직장
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">휴대폰 
+                        <input type="text" class="table__number"  name="phone"/>-<input type="text" class="table__number" name="phone" />-<input type="text" class="table__number" name="phone" />
+	                    <input type="radio" name="agency" value="SKT" />SKT 
+	                    <input type="radio" name="agency" value="KT" />KT 
+	                    <input type="radio" name="agency" value="LGT" />LGT
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">전화번호나 휴대폰번호 2가지 중 하나는 반드시 입력하셔야 합니다.</td>
+                </tr>
+                <tr>
+                    <td class="title">거주지 주소</td>
+                    <td colspan="3">
+	                    <div  class="adBtnSet">
+	                    	<div class="adBtn">국내</div>
+	                    	<div class="adBtn">국외</div>                	
+                    		<input class="addinput" type="text" name="adress">
+                    	</div>
+                    </td>
+                </tr>        
+            </table>
+            <!-- table블럭 세팅 부분 종료 -->
+			
+			<!-- button블럭 세팅 부분 시작 -->
+            <div class="btnSet">
+            	<div>
+            		<button class="setButton" type="button" value="뒤로"><a href='/HomePJ'>뒤로</a></button>
+            	</div>
+            	<div>
+	            	<button class="setButton" type="submit" value="전송">전송</button>
+	            	<button class="setButton" type="reset" value="취소">취소</button>
+            	</div>
+            </div>
+            <!-- button블럭 세팅 부분 종료 -->
+        </form>
+        <!-- form태그 종료 -->
+    </div>
+    <!-- 큰 테이블 종료부분(css하기 쉽게 블럭지정용) -->
+</body>
+</html>
+
+
